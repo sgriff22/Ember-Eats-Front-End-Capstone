@@ -1,0 +1,120 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Dutch Oven Campfire Chili",
+      "description": "Hearty chili cooked in a Dutch oven over campfire coals.",
+      "ingredients": "1 lb ground beef, 2 cans beans, 3 cans tomatoes, 2 tbsp chili powder",
+      "userId": 1,
+      "steps": "Combine all ingredients in a Dutch oven and cook over campfire coals for 1-2 hours.",
+      "categoryId": 10, 
+      "mealId": 3 
+    },
+    {
+      "id": 2,
+      "title": "Campfire Pizza",
+      "description": "Delicious pizza cooked in a Dutch oven over a campfire.",
+      "ingredients": "1 package pizza dough, 1 cup tomato sauce, 2 cups cheese, toppings of your choice",
+      "userId": 2,
+      "steps": "Roll out pizza dough, add sauce, cheese, and toppings. Cook in a preheated Dutch oven over campfire until the crust is golden.",
+      "categoryId": 8, 
+      "mealId": 3 
+    },
+    {
+      "id": 3,
+      "title": "Dutch Oven Peach Cobbler",
+      "description": "Sweet peach cobbler baked in a Dutch oven over campfire coals.",
+      "ingredients": "4 peaches, 1 cup sugar, 1.5 cups flour, 0.5 cup butter, 1 tsp cinnamon",
+      "userId": 1,
+      "steps": "Mix peaches, sugar, and cinnamon. In a Dutch oven, layer peaches and cover with a mixture of flour, sugar, and butter. Cook in the campfire coals until bubbly and golden brown.",
+      "categoryId": 3, 
+      "mealId": 4 
+    },
+    {
+      "id": 4,
+      "title": "Campfire Grilled Chicken Skewers",
+      "description": "Flavorful chicken skewers grilled over a campfire for the perfect outdoor meal.",
+      "ingredients": "1 lb chicken breast, bell peppers, onions, olive oil, salt, pepper",
+      "userId": 3,
+      "steps": "Marinate chicken in olive oil, salt, and pepper. Skewer chicken with bell peppers and onions. Grill over the campfire until chicken is cooked through.",
+      "categoryId": 6, 
+      "mealId": 3 
+    },
+    {
+      "id": 5,
+      "title": "Dutch Oven Bacon and Cheese Campfire Potatoes",
+      "description": "Savory bacon and cheese potatoes cooked in a Dutch oven over campfire coals.",
+      "ingredients": "4 potatoes, 1 cup shredded cheese, 6 slices bacon, green onions",
+      "userId": 4,
+      "steps": "Slice potatoes and layer in a Dutch oven with shredded cheese and bacon. Cook over campfire coals until potatoes are tender and bacon is crispy. Garnish with chopped green onions.",
+      "categoryId": 11, 
+      "mealId": 3 
+    },
+    {
+      "id": 6,
+      "title": "Dutch Oven Campfire Breakfast Burritos",
+      "description": "Hearty breakfast burritos cooked in a Dutch oven over campfire coals.",
+      "ingredients": "8 eggs, sausage, tortillas, cheese, salsa",
+      "userId": 3,
+      "steps": "Scramble eggs and cook with sausage in a Dutch oven. Assemble burritos with eggs, cheese, and salsa. Warm in the Dutch oven over campfire coals.",
+      "categoryId": 1, 
+      "mealId": 1 
+    }
+  ],
+  "categories": [
+    { "id": 1, "name": "Bread" },
+    { "id": 2, "name": "Curries" },
+    { "id": 3, "name": "Desserts" },
+    { "id": 4, "name": "Pasta" },
+    { "id": 5, "name": "Quiche" },
+    { "id": 6, "name": "Roasts" },
+    { "id": 7, "name": "Sandwiches" },
+    { "id": 8, "name": "Pizza" },
+    { "id": 9, "name": "Soups" },
+    { "id": 10, "name": "Stews" },
+    { "id": 11, "name": "Casserole" }
+  ],
+  "meals": [
+    { "id": 1, "name": "Breakfast" },
+    { "id": 2, "name": "Lunch" },
+    { "id": 3, "name": "Dinner" },
+    { "id": 4, "name": "Snack" }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "bio": "Food enthusiast with a passion for trying new recipes and creating delicious meals at home.",
+      "isAdmin": false
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "bio": "Professional chef with a love for teaching others the art of cooking. Admin of the cooking community.",
+      "isAdmin": true
+    },
+    {
+      "id": 3,
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "bio": "Home cook exploring the world of flavors and experimenting with new ingredients.",
+      "isAdmin": false
+    },
+    {
+      "id": 4,
+      "name": "Bob Thompson",
+      "email": "bob@example.com",
+      "bio": "Passionate about healthy and delicious meals. Sharing recipes for a balanced lifestyle.",
+      "isAdmin": false
+    }
+  ],
+  "saves": [
+    { "userId": 1, "recipeId": 5 },
+    { "userId": 2, "recipeId": 2 },
+    { "userId": 3, "recipeId": 3 },
+    { "userId": 1, "recipeId": 1 },
+    { "userId": 2, "recipeId": 4 }
+  ]
+}
