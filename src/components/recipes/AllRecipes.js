@@ -89,7 +89,7 @@ export const AllRecipes = () => {
           {filteredRecipes.map((recipe) => {
             return (
               <Col sm={4} key={recipe.id}>
-                <Link to={`/allRecipes/${recipe.id}`}>
+                <Link to={`/recipes/${recipe.id}`}>
                   <RecipeCard recipe={recipe} />
                 </Link>
               </Col>
