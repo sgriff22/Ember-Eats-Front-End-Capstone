@@ -1,13 +1,3 @@
-// import { useEffect, useState } from "react";
-// import {
-//   Dropdown,
-//   DropdownItem,
-//   DropdownMenu,
-//   DropdownToggle,
-//   Input,
-//   UncontrolledDropdown,
-// } from "reactstrap";
-
 export const RecipeFilterBar = ({
   setSearchCategoryId,
   setSearchMealId,
@@ -62,29 +52,3 @@ export const RecipeFilterBar = ({
     </div>
   );
 };
-
-// <div>
-//   <Input placeholder="Search recipes" />
-
-//   <div className="d-flex p-5">
-//     <UncontrolledDropdown>
-//       <DropdownToggle caret>Filter by category</DropdownToggle>
-//       <DropdownMenu>
-//         <DropdownItem header>Categories</DropdownItem>
-//         {categories.map((category) => {
-//           return <DropdownItem>{category.name}</DropdownItem>;
-//         })}
-//       </DropdownMenu>
-//     </UncontrolledDropdown>
-
-//     <UncontrolledDropdown>
-//       <DropdownToggle caret>Filter by meal</DropdownToggle>
-//       <DropdownMenu>
-//         <DropdownItem header>Meal</DropdownItem>
-//         {meals.map((category) => {
-//           return <DropdownItem>{category.name}</DropdownItem>;
-//         })}
-//       </DropdownMenu>
-//     </UncontrolledDropdown>
-//   </div>
-// </div>

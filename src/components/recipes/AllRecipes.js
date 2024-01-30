@@ -1,13 +1,13 @@
+import React from "react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { getAllRecipes } from "../../services/recipeService";
 import { RecipeCard } from "./RecipeCard";
-import { Col, Container, Row } from "reactstrap";
-import "./Recipes.css";
-import React from "react";
 import { RecipeFilterBar } from "./RecipeFilterBar";
 import { getAllCategories } from "../../services/categoryService";
 import { getAllMeals } from "../../services/mealService";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Col, Container, Row } from "reactstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export const AllRecipes = () => {
   const [recipes, setRecipes] = useState([]);
@@ -16,6 +16,7 @@ export const AllRecipes = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchCategoryId, setSearchCategoryId] = useState(0);
   const [searchMealId, setSearchMealId] = useState(0);
+  const [filteredRecipes, setFilteredRecipes] = useState([]);
 
   useEffect(() => {
     getAllRecipes().then((recipesArray) => {
@@ -35,6 +36,42 @@ export const AllRecipes = () => {
     });
   }, []);
 
+  //Search Filter
+  useEffect(() => {
+    if (searchTerm) {
+      const foundRecipes = recipes.filter((recipe) =>
+        recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredRecipes(foundRecipes);
+    } else {
+      setFilteredRecipes(recipes);
+    }
+  }, [recipes, searchTerm]);
+
+  //Category filter
+  useEffect(() => {
+    if (searchCategoryId) {
+      const foundRecipes = recipes.filter(
+        (recipe) => recipe.categoryId === searchCategoryId
+      );
+      setFilteredRecipes(foundRecipes);
+    } else {
+      setFilteredRecipes(recipes);
+    }
+  }, [recipes, searchCategoryId]);
+
+  //Meal filter
+  useEffect(() => {
+    if (searchMealId) {
+      const foundRecipes = recipes.filter(
+        (recipe) => recipe.mealId === searchMealId
+      );
+      setFilteredRecipes(foundRecipes);
+    } else {
+      setFilteredRecipes(recipes);
+    }
+  }, [recipes, searchMealId]);
+
   return (
     <div>
       <h1>All Recipes</h1>
@@ -49,10 +86,12 @@ export const AllRecipes = () => {
 
       <Container fluid="md">
         <Row>
-          {recipes.map((recipe) => {
+          {filteredRecipes.map((recipe) => {
             return (
               <Col sm={4} key={recipe.id}>
-                <RecipeCard recipe={recipe} />
+                <Link to={`/allRecipes/${recipe.id}`}>
+                  <RecipeCard recipe={recipe} />
+                </Link>
               </Col>
             );
           })}
