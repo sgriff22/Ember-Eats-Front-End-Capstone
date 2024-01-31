@@ -1,3 +1,12 @@
+import { RecipeForm } from "../forms/RecipeForm";
+
 export const NewRecipe = () => {
-  return <div>New Recipe</div>;
+  const handleInputChange = (e) => {};
+
+  return (
+    <div>
+      <h2>New Recipe</h2>
+      <RecipeForm handleInputChange={handleInputChange} />
+    </div>
+  );
 };
