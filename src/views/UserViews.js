@@ -6,6 +6,7 @@ import { Welcome } from "../welcome/Welcome";
 import { MyRecipes } from "../components/recipes/MyRecipes";
 import { NewRecipe } from "../components/recipes/NewRecipe";
 import { Profile } from "../components/profile/Profile";
+import { RecipeForm } from "../components/forms/RecipeForm";
 
 export const UserViews = ({ currentUser }) => {
   return (
@@ -22,11 +23,23 @@ export const UserViews = ({ currentUser }) => {
         <Route index element={<Welcome />} />
         <Route path="recipes">
           <Route index element={<AllRecipes />} />
-          <Route path=":recipeId" element={<RecipeDetails />} />
+          <Route path=":recipeId">
+            <Route
+              index
+              element={<RecipeDetails currentUser={currentUser} />}
+            />
+            <Route path="editRecipe" element={<RecipeForm />} />
+          </Route>
         </Route>
-        <Route path="myRecipes" element={<MyRecipes />} />
-        <Route path="newRecipe" element={<NewRecipe />} />
-        <Route path="profile" element={<Profile />} />
+        <Route
+          path="myRecipes"
+          element={<MyRecipes currentUser={currentUser} />}
+        />
+        <Route
+          path="newRecipe"
+          element={<NewRecipe currentUser={currentUser} />}
+        />
+        <Route path="profile" element={<Profile currentUser={currentUser} />} />
       </Route>
     </Routes>
   );

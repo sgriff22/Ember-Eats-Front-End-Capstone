@@ -10,8 +10,14 @@ export const Welcome = () => {
         height: "800px",
       }}
     >
-      <h1>Welcome to EmberEats</h1>
-      <h6>Ignite Flavor, One Dutch Oven Recipe at a Time!</h6>
+      <h1>Welcome to</h1>
+      <img
+        src={"/images/logo-white-transparent.png"}
+        alt="EmberEats logo"
+        style={{
+          height: "300px",
+        }}
+      />
     </div>
   );
 };
