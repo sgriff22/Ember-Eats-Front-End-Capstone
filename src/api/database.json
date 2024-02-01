@@ -173,11 +173,6 @@
       "recipeId": 2
     },
     {
-      "id": 3,
-      "userId": 4,
-      "recipeId": 3
-    },
-    {
       "id": 4,
       "userId": 1,
       "recipeId": 3
@@ -196,6 +191,16 @@
       "userId": 3,
       "recipeId": 5,
       "id": 7
+    },
+    {
+      "userId": 4,
+      "recipeId": 3,
+      "id": 8
+    },
+    {
+      "userId": 4,
+      "recipeId": 4,
+      "id": 9
     }
   ]
 }

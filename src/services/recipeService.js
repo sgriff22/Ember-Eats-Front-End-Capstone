@@ -27,3 +27,9 @@ export const addNewRecipe = (recipeObj) => {
     body: JSON.stringify(recipeObj),
   }).then((res) => res.json());
 };
+
+export const getRecipesByUserId = (userId) => {
+  return fetch(`http://localhost:8088/recipes?userId=${userId}`).then((res) =>
+    res.json()
+  );
+};
