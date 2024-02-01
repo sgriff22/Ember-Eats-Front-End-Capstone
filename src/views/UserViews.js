@@ -7,6 +7,7 @@ import { MyRecipes } from "../components/recipes/MyRecipes";
 import { NewRecipe } from "../components/recipes/NewRecipe";
 import { Profile } from "../components/profile/Profile";
 import { EditRecipe } from "../components/recipes/EditRecipe";
+import { ProfileForm } from "../components/forms/ProfileForm";
 
 export const UserViews = ({ currentUser }) => {
   return (
@@ -15,7 +16,7 @@ export const UserViews = ({ currentUser }) => {
         path="/"
         element={
           <>
-            <NavBar />
+            <NavBar currentUser={currentUser} />
             <Outlet />
           </>
         }
@@ -28,7 +29,7 @@ export const UserViews = ({ currentUser }) => {
               index
               element={<RecipeDetails currentUser={currentUser} />}
             />
-            <Route path="editRecipe" element={<EditRecipe/>} />
+            <Route path="editRecipe" element={<EditRecipe />} />
           </Route>
         </Route>
         <Route
@@ -39,7 +40,10 @@ export const UserViews = ({ currentUser }) => {
           path="newRecipe"
           element={<NewRecipe currentUser={currentUser} />}
         />
-        <Route path="profile" element={<Profile currentUser={currentUser} />} />
+        <Route path="profile/:userId">
+          <Route index element={<Profile currentUser={currentUser} />} />
+          <Route path="editProfile" element={<ProfileForm />} />
+        </Route>
       </Route>
     </Routes>
   );

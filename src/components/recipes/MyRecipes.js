@@ -100,7 +100,10 @@ export const MyRecipes = ({ currentUser }) => {
         <Row>
           {filteredRecipes.map((recipe) => {
             return (
-              <Col sm={4} key={recipe.id}>
+              <Col
+                sm={4}
+                key={recipe.id + (recipe.recipeId ? recipe.recipeId : "")}
+              >
                 {recipe.recipeId ? (
                   <SavedRecipeCard
                     recipe={recipe}
