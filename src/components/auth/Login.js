@@ -5,7 +5,7 @@ import "./Login.css";
 import { getUserByEmail } from "../../services/userService";
 
 export const Login = () => {
-  const [email, set] = useState();
+  const [email, setEmail] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
@@ -40,10 +40,12 @@ export const Login = () => {
               <input
                 type="email"
                 value={email}
-                onChange={(evt) => set(evt.target.value)}
+                onChange={(evt) => setEmail(evt.target.value)}
                 className="form-control"
                 placeholder="Email address"
+                name="email"
                 required
+                autoComplete="email"
                 autoFocus
               />
             </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getRecipeById } from "../../services/recipeService";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { createSaveRecipe, getAllSaves } from "../../services/savesService";
 
 export const RecipeDetails = ({ currentUser }) => {
@@ -74,7 +74,8 @@ export const RecipeDetails = ({ currentUser }) => {
 
       <div>
         <p>
-          {recipe.user?.name} &nbsp; {formattedDate}
+          <Link to={`/profile/${recipe.user?.id}`}>{recipe.user?.name}</Link>{" "}
+          &nbsp; {formattedDate}
           {/* Add Recipe rating */}{" "}
         </p>
         <p>{recipe.description}</p>
