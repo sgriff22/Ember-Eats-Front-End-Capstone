@@ -25,7 +25,7 @@ export const EditRecipe = () => {
       setRecipe(stateCopy);
     }
   };
-  
+
   const handleEditSave = (event) => {
     event.preventDefault();
 
@@ -38,7 +38,7 @@ export const EditRecipe = () => {
       steps: recipe.steps,
       categoryId: recipe.categoryId,
       mealId: recipe.mealId,
-      date: new Date(),
+      date: recipe.date,
     };
 
     editRecipe(recipeObj).then(() => {

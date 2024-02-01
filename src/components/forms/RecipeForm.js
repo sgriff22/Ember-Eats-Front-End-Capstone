@@ -13,7 +13,13 @@ import {
 import { getAllCategories } from "../../services/categoryService";
 import { getAllMeals } from "../../services/mealService";
 
-export const RecipeForm = ({ handleEditSave, recipe, handleInputChange }) => {
+export const RecipeForm = ({
+  handleEditSave,
+  recipe,
+  handleInputChange,
+  newRecipe,
+  handleSubmit,
+}) => {
   const [meals, setMeals] = useState([]);
   const [categories, setCategories] = useState([]);
 
@@ -38,7 +44,7 @@ export const RecipeForm = ({ handleEditSave, recipe, handleInputChange }) => {
           name="title"
           placeholder="Give your recipe a title"
           type="text"
-          value={recipe?.title ? recipe.title : ""}
+          value={(recipe && recipe?.title) || newRecipe?.title || ""}
           required
           onChange={handleInputChange}
         />
@@ -50,7 +56,9 @@ export const RecipeForm = ({ handleEditSave, recipe, handleInputChange }) => {
           name="description"
           placeholder="Give a brief description of your recipe"
           type="text"
-          value={recipe?.description ? recipe.description : ""}
+          value={
+            (recipe && recipe?.description) || newRecipe?.description || ""
+          }
           required
           onChange={handleInputChange}
         />
@@ -64,9 +72,13 @@ export const RecipeForm = ({ handleEditSave, recipe, handleInputChange }) => {
                 <Input
                   id="recipeIngredients"
                   name="ingredients"
-                  placeholder="List the ingredients for your recipe"
+                  placeholder={`List the ingredients for your recipe\nExample:\nitem\nitem\nitem`}
                   type="textarea"
-                  value={recipe?.ingredients ? recipe.ingredients : ""}
+                  value={
+                    (recipe && recipe?.ingredients) ||
+                    newRecipe?.ingredients ||
+                    ""
+                  }
                   required
                   onChange={handleInputChange}
                 />
@@ -78,9 +90,9 @@ export const RecipeForm = ({ handleEditSave, recipe, handleInputChange }) => {
                 <Input
                   id="recipeSteps"
                   name="steps"
-                  placeholder="List the recipe steps"
+                  placeholder={`List the steps for your recipe\nExample:\nstep 1\nstep 2\nstep 3`}
                   type="textarea"
-                  value={recipe?.steps ? recipe.steps : ""}
+                  value={(recipe && recipe?.steps) || newRecipe?.steps || ""}
                   required
                   onChange={handleInputChange}
                 />
@@ -100,7 +112,11 @@ export const RecipeForm = ({ handleEditSave, recipe, handleInputChange }) => {
                   name="categoryId"
                   type="select"
                   required
-                  value={recipe?.categoryId ? recipe?.categoryId : ""}
+                  value={
+                    (recipe && recipe?.categoryId) ||
+                    newRecipe?.categoryId ||
+                    ""
+                  }
                   onChange={handleInputChange}
                 >
                   <option>Choose recipe category</option>
@@ -121,7 +137,7 @@ export const RecipeForm = ({ handleEditSave, recipe, handleInputChange }) => {
                   id="mealSelect"
                   name="mealId"
                   type="select"
-                  value={recipe?.mealId ? recipe?.mealId : ""}
+                  value={(recipe && recipe?.mealId) || newRecipe?.mealId || ""}
                   required
                   onChange={handleInputChange}
                 >
@@ -147,7 +163,7 @@ export const RecipeForm = ({ handleEditSave, recipe, handleInputChange }) => {
       {recipe ? (
         <Button onClick={handleEditSave}>Save</Button>
       ) : (
-        <Button>Submit</Button>
+        <Button onClick={handleSubmit}>Submit</Button>
       )}
     </Form>
   );

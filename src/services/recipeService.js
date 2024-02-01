@@ -17,3 +17,13 @@ export const editRecipe = (recipe) => {
     body: JSON.stringify(recipe),
   });
 };
+
+export const addNewRecipe = (recipeObj) => {
+  return fetch(`http://localhost:8088/recipes`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(recipeObj),
+  }).then((res) => res.json());
+};
