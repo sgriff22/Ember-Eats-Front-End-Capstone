@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { getAllRecipes } from "../../services/recipeService";
 import { RecipeCard } from "./RecipeCard";
 import { RecipeFilterBar } from "./RecipeFilterBar";
@@ -89,9 +88,7 @@ export const AllRecipes = () => {
           {filteredRecipes.map((recipe) => {
             return (
               <Col sm={4} key={recipe.id}>
-                <Link to={`/recipes/${recipe.id}`}>
-                  <RecipeCard recipe={recipe} />
-                </Link>
+                <RecipeCard recipe={recipe} />
               </Col>
             );
           })}
