@@ -42,7 +42,10 @@ export const UserViews = ({ currentUser }) => {
         />
         <Route path="profile/:userId">
           <Route index element={<Profile currentUser={currentUser} />} />
-          <Route path="editProfile" element={<ProfileForm />} />
+          <Route
+            path="editProfile"
+            element={<ProfileForm currentUser={currentUser} />}
+          />
         </Route>
       </Route>
     </Routes>

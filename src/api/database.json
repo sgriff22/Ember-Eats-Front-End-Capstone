@@ -194,13 +194,38 @@
     },
     {
       "userId": 4,
-      "recipeId": 3,
+      "recipeId": 2,
       "id": 8
     },
     {
       "userId": 4,
+      "recipeId": 1,
+      "id": 10
+    },
+    {
+      "userId": 4,
+      "recipeId": 3,
+      "id": 11
+    },
+    {
+      "userId": 4,
       "recipeId": 4,
-      "id": 9
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "recipeId": 6,
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "recipeId": 4,
+      "id": 14
+    },
+    {
+      "userId": 3,
+      "recipeId": 1,
+      "id": 15
     }
   ]
 }
