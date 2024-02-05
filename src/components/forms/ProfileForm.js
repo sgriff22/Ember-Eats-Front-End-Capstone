@@ -40,48 +40,51 @@ export const ProfileForm = () => {
   };
 
   return (
-    <Form>
-      <FormGroup>
-        <Label for="userName">Name</Label>
-        <Input
-          id="userName"
-          name="name"
-          type="text"
-          value={user?.name}
-          required
-          autoComplete="name"
-          onChange={handleInputChange}
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label for="bio">About Me</Label>
-        <Input
-          id="bio"
-          name="bio"
-          type="textarea"
-          value={user?.bio}
-          required
-          onChange={handleInputChange}
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label for="userEmail">Email</Label>
-        <Input
-          id="userEmail"
-          name="email"
-          type="text"
-          value={user?.email}
-          required
-          autoComplete="email"
-          onChange={handleInputChange}
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label for="profileImage">Image</Label>
-        <Input id="profileImage" name="image" type="file" />
-        <FormText></FormText>
-      </FormGroup>
-      <Button onClick={handleSave}>Save</Button>
-    </Form>
+    <div>
+      <h2>Edit Profile</h2>
+      <Form>
+        <FormGroup>
+          <Label for="userName">Name</Label>
+          <Input
+            id="userName"
+            name="name"
+            type="text"
+            value={user?.name}
+            required
+            autoComplete="name"
+            onChange={handleInputChange}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="bio">About Me</Label>
+          <Input
+            id="bio"
+            name="bio"
+            type="textarea"
+            value={user?.bio}
+            required
+            onChange={handleInputChange}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="userEmail">Email</Label>
+          <Input
+            id="userEmail"
+            name="email"
+            type="text"
+            value={user?.email}
+            required
+            autoComplete="email"
+            onChange={handleInputChange}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="profileImage">Image</Label>
+          <Input id="profileImage" name="image" type="file" />
+          <FormText></FormText>
+        </FormGroup>
+        <Button onClick={handleSave}>Save</Button>
+      </Form>
+    </div>
   );
 };
