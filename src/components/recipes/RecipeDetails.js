@@ -8,13 +8,15 @@ import { AlreadyRated } from "../rate/AlreadyRated";
 import { Col, Container, Row } from "reactstrap";
 import { Stars } from "../rate/Stars";
 
-
 export const RecipeDetails = ({ currentUser }) => {
   const [recipe, setRecipe] = useState({});
   const [saves, setSaves] = useState([]);
   const [ratings, setRatings] = useState([]);
-  const { recipeId } = useParams();
 
+  const { recipeId } = useParams();
+  const navigate = useNavigate();
+
+  //Get the average of the star ratings
   const property = "stars";
   const decimalPlaces = 1;
   const sum = ratings.reduce(
@@ -23,8 +25,7 @@ export const RecipeDetails = ({ currentUser }) => {
   );
   const averageValue = (sum / ratings.length).toFixed(decimalPlaces);
 
-  const navigate = useNavigate();
-
+  //Convert Date
   const date = new Date(recipe.date);
   const formattedDate = date.toLocaleString("en-US", {
     year: "numeric",
@@ -32,6 +33,7 @@ export const RecipeDetails = ({ currentUser }) => {
     day: "numeric",
   });
 
+  //Break up string to be an array of strings
   const ingredients = `${recipe.ingredients}`;
   const ingredientsArray = ingredients.split(", ");
 
@@ -69,7 +71,7 @@ export const RecipeDetails = ({ currentUser }) => {
   };
 
   return (
-    <Container fluid className="recipe-details">
+    <Container className="recipe-details">
       <Row>
         <Col sm="8">
           <h2>{recipe.title} &nbsp;</h2>
@@ -111,7 +113,7 @@ export const RecipeDetails = ({ currentUser }) => {
         <p>
           <Link to={`/profile/${recipe.user?.id}`}>{recipe.user?.name}</Link>{" "}
           &nbsp; {formattedDate}
-          &nbsp; <Stars averageValue={averageValue}/>
+          &nbsp; <Stars averageValue={averageValue} />
         </p>
         <p>{recipe.description}</p>
         {/* Add Recipe image */}

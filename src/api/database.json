@@ -137,28 +137,32 @@
       "name": "John Doe",
       "email": "john@example.com",
       "bio": "Food enthusiast with a passion for trying new recipes and creating delicious meals at home.",
-      "isAdmin": false
+      "isAdmin": false,
+      "image": "/images/profile/john-doe.jpg"
     },
     {
       "id": 2,
       "name": "Jane Smith",
       "email": "jane@example.com",
       "bio": "Professional chef with a love for teaching others the art of cooking. Admin of the cooking community.",
-      "isAdmin": true
+      "isAdmin": true,
+      "image": "/images/profile/jane-smith.jpg"
     },
     {
       "id": 3,
       "name": "Alice Johnson",
       "email": "alice@example.com",
       "bio": "Home cook exploring the world of flavors and experimenting with new ingredients.",
-      "isAdmin": false
+      "isAdmin": false,
+      "image": "/images/profile/alice-johnson.jpg"
     },
     {
       "id": 4,
       "name": "Bob Thompson",
       "email": "bob@example.com",
       "bio": "Passionate about healthy and delicious meals. Sharing recipes for a balanced lifestyle.",
-      "isAdmin": false
+      "isAdmin": false,
+      "image": "/images/profile/bob-thompson.jpg"
     }
   ],
   "saves": [

@@ -37,6 +37,7 @@ export const RecipeForm = ({
 
   return (
     <Form>
+      <h1>New Recipe</h1>
       <FormGroup>
         <Label for="recipeTitle">Title</Label>
         <Input

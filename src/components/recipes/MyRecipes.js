@@ -89,7 +89,7 @@ export const MyRecipes = ({ currentUser }) => {
 
   return (
     <div>
-      <h2>My Recipes</h2>
+      <h1>My Recipes</h1>
       <RecipeFilterBar
         setSearchCategoryId={setSearchCategoryId}
         setSearchMealId={setSearchMealId}
@@ -97,14 +97,14 @@ export const MyRecipes = ({ currentUser }) => {
         categories={categories}
         meals={meals}
       />
-      <Container fluid="md">
+      <Container fluid="md" id="stars">
         <Row>
           {filteredRecipes.map((recipe) => {
             const key = recipe.recipeId
               ? `saved-${recipe.recipeId}`
               : `created-${recipe.id}`;
             return (
-              <Col sm={4} key={key}>
+              <Col sm={3} key={key}>
                 {recipe.recipeId ? (
                   <SavedRecipeCard
                     recipe={recipe}

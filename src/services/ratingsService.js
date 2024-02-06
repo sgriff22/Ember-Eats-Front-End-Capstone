@@ -13,3 +13,13 @@ export const addNewRating = (rating) => {
     body: JSON.stringify(rating),
   }).then((res) => res.json());
 };
+
+export const editRating = (rating) => {
+  return fetch(`http://localhost:8088/ratings/${rating.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(rating),
+  });
+};

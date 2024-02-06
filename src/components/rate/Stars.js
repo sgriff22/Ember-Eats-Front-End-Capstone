@@ -1,12 +1,12 @@
 export const Stars = ({ averageValue }) => {
   return (
-    <span>
+    <span id="stars">
       {Array.from({ length: averageValue }, (_, index) => (
         <span key={index} className="star">
           &#9733;
         </span>
       ))}
-      <label>{averageValue}</label>
+      {averageValue}
     </span>
   );
 };
