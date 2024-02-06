@@ -1,5 +1,5 @@
 export const getAllRecipes = () => {
-  return fetch("http://localhost:8088/recipes").then((res) => res.json());
+  return fetch("http://localhost:8088/recipes?_embed=ratings").then((res) => res.json());
 };
 
 export const getRecipeById = (recipeId) => {
@@ -29,7 +29,7 @@ export const addNewRecipe = (recipeObj) => {
 };
 
 export const getRecipesByUserId = (userId) => {
-  return fetch(`http://localhost:8088/recipes?userId=${userId}`).then((res) =>
+  return fetch(`http://localhost:8088/recipes?userId=${userId}&_embed=ratings`).then((res) =>
     res.json()
   );
 };

@@ -1,20 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Antic&display=swap");
-
 body {
   margin: 0;
   font-family: "Antic", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin-top: 74px;
+  background-color: #F1F1F1;
 }
 
 a {
   text-decoration: none;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
 
 #recipeIngredients {
@@ -29,3 +23,16 @@ code {
   height: 125px;
 }
 
+button {
+  background-color: #6c757d;
+  color: white;
+  font-family: "Amaranth", sans-serif;
+  border-radius: 6px;
+  border: none;
+  padding: 5px 8px;
+  font-size: 1.3rem;
+}
+
+button:hover {
+  background-color: orange;
+}

@@ -2,11 +2,26 @@ import { useEffect, useState } from "react";
 import { getRecipeById } from "../../services/recipeService";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { createSaveRecipe, getAllSaves } from "../../services/savesService";
+import { StarRating } from "../rate/StarRating";
+import { getRatingsByRecipeId } from "../../services/ratingsService";
+import { AlreadyRated } from "../rate/AlreadyRated";
+import { Col, Container, Row } from "reactstrap";
+import { Stars } from "../rate/Stars";
+
 
 export const RecipeDetails = ({ currentUser }) => {
   const [recipe, setRecipe] = useState({});
   const [saves, setSaves] = useState([]);
+  const [ratings, setRatings] = useState([]);
   const { recipeId } = useParams();
+
+  const property = "stars";
+  const decimalPlaces = 1;
+  const sum = ratings.reduce(
+    (accumulator, obj) => accumulator + obj[property],
+    0
+  );
+  const averageValue = (sum / ratings.length).toFixed(decimalPlaces);
 
   const navigate = useNavigate();
 
@@ -37,6 +52,12 @@ export const RecipeDetails = ({ currentUser }) => {
     });
   }, [currentUser]);
 
+  useEffect(() => {
+    getRatingsByRecipeId(recipeId).then((res) => {
+      setRatings(res);
+    });
+  }, [recipeId]);
+
   const handleSave = () => {
     const saveObj = {
       userId: currentUser.id,
@@ -48,12 +69,15 @@ export const RecipeDetails = ({ currentUser }) => {
   };
 
   return (
-    <div>
-      <h2>
-        {recipe.title} &nbsp;
-        <span>
+    <Container fluid className="recipe-details">
+      <Row>
+        <Col sm="8">
+          <h2>{recipe.title} &nbsp;</h2>
+        </Col>
+        <Col sm="1">
           {currentUser.id === recipe.userId ? (
             <button
+              className="edit"
               onClick={() => {
                 navigate(`/recipes/${recipeId}/editRecipe`);
               }}
@@ -65,18 +89,29 @@ export const RecipeDetails = ({ currentUser }) => {
           )}
           {currentUser.id !== recipe.userId &&
           !saves.some((save) => save.recipeId === recipe.id) ? (
-            <button onClick={handleSave}>Save</button>
+            <button className="save" onClick={handleSave}>
+              Save
+            </button>
           ) : (
             ""
           )}
-        </span>
-      </h2>
-
+        </Col>
+        <Col sm="3">
+          {currentUser.id !== recipe.userId &&
+          !ratings.some((rating) => rating.userId === currentUser.id) ? (
+            <StarRating currentUser={currentUser} />
+          ) : (
+            currentUser.id !== recipe.userId && (
+              <AlreadyRated ratings={ratings} currentUser={currentUser} />
+            )
+          )}
+        </Col>
+      </Row>
       <div>
         <p>
           <Link to={`/profile/${recipe.user?.id}`}>{recipe.user?.name}</Link>{" "}
           &nbsp; {formattedDate}
-          {/* Add Recipe rating */}{" "}
+          &nbsp; <Stars averageValue={averageValue}/>
         </p>
         <p>{recipe.description}</p>
         {/* Add Recipe image */}
@@ -97,6 +132,6 @@ export const RecipeDetails = ({ currentUser }) => {
           </ol>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
