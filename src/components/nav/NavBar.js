@@ -1,14 +1,9 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Nav, NavItem, NavLink, Navbar, NavbarBrand } from "reactstrap";
 import "./NavBar.css";
 
 export const NavBar = ({ currentUser }) => {
   const navigate = useNavigate();
-
-  const location = useLocation();
-  const currentRoute = location.pathname;
-
-  console.log("Current Route:", currentRoute);
 
   return (
     <Navbar className="navbar-container" color="dark" fixed="top" dark>
@@ -22,7 +17,7 @@ export const NavBar = ({ currentUser }) => {
         />
       </NavbarBrand>
       <Nav>
-        <NavItem className="text">
+        <NavItem>
           <NavLink href="/recipes">Recipes</NavLink>
         </NavItem>
         <NavItem>

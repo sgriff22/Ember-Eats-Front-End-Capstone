@@ -7,6 +7,7 @@ import { getAllMeals } from "../../services/mealService";
 import { Col, Container, Row } from "reactstrap";
 import { RecipeCard } from "./RecipeCard";
 import { SavedRecipeCard } from "./SavedRecipeCard";
+import "./Recipes.css";
 
 export const MyRecipes = ({ currentUser }) => {
   const [myRecipes, setMyRecipes] = useState([]);
@@ -99,7 +100,9 @@ export const MyRecipes = ({ currentUser }) => {
       <Container fluid="md">
         <Row>
           {filteredRecipes.map((recipe) => {
-            const key = recipe.recipeId ? `saved-${recipe.recipeId}` : `created-${recipe.id}`;
+            const key = recipe.recipeId
+              ? `saved-${recipe.recipeId}`
+              : `created-${recipe.id}`;
             return (
               <Col sm={4} key={key}>
                 {recipe.recipeId ? (

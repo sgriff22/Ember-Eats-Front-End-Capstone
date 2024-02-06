@@ -1,0 +1,31 @@
+.star-rating {
+  font-size: 20px;
+  width: 120px;
+  text-align: center;
+}
+
+.star-rating button:not(.rate) {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 1px;
+}
+.on {
+  color: gold;
+}
+.off {
+  color: #ccc;
+}
+
+.star-rating button:hover:not(.rate) {
+  color: gold;
+}
+
+.rate-header {
+  margin-bottom: 0;
+}
+
+.rate {
+padding: 0 5px;
+
+}
