@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Nav, NavItem, NavLink, Navbar, NavbarBrand } from "reactstrap";
 import "./NavBar.css";
+import logo from '../../assets/logo/logo-white-transparent-noSlogan.png';
 
 export const NavBar = ({ currentUser }) => {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ export const NavBar = ({ currentUser }) => {
       <NavbarBrand href="/">
         <img
           alt="EmberEats logo"
-          src={"/images/logo-white-transparent-noSlogan.png"}
+          src={logo}
           style={{
             height: "50px",
           }}

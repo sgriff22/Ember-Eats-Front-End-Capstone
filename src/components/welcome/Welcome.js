@@ -1,5 +1,7 @@
 import React from "react";
 import "./Welcome.css";
+import landscapeImage from "../../assets/landscape.jpg";
+import logoImage from "../../assets/logo/logo-white-transparent.png";
 
 export const Welcome = () => {
   return (
@@ -11,7 +13,7 @@ export const Welcome = () => {
     >
       <div
         style={{
-          backgroundImage: "url(images/landscape.jpg)",
+          backgroundImage: `url(${landscapeImage})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           height: "100%",
@@ -21,7 +23,7 @@ export const Welcome = () => {
         <div
           style={{
             paddingLeft: "10%",
-            width: "90%"
+            width: "90%",
           }}
         >
           <h1
@@ -37,7 +39,7 @@ export const Welcome = () => {
           </h1>
           <div>
             <img
-              src={"/images/logo-white-transparent.png"}
+              src={logoImage}
               alt="EmberEats logo"
               style={{
                 width: "40%",
