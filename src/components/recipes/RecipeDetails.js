@@ -7,7 +7,7 @@ import { getRatingsByRecipeId } from "../../services/ratingsService";
 import { AlreadyRated } from "../rate/AlreadyRated";
 import { Col, Container, Row } from "reactstrap";
 import { Stars } from "../rate/Stars";
-import { Comments } from "../comments/Comments";
+import { CommentList } from "../comments/CommentList";
 
 export const RecipeDetails = ({ currentUser }) => {
   const [recipe, setRecipe] = useState({});
@@ -135,7 +135,7 @@ export const RecipeDetails = ({ currentUser }) => {
           </ol>
         </div>
       </div>
-      <Comments recipe={recipe} currentUser={currentUser} />
+      <CommentList recipe={recipe} currentUser={currentUser} />
     </Container>
   );
 };

@@ -17,5 +17,15 @@ export const addNewComment = (comment) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(comment),
-  }).then((res) => res.json())
+  }).then((res) => res.json());
+};
+
+export const addNewReply = (reply) => {
+  return fetch("http://localhost:8088/replies", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(reply),
+  }).then((res) => res.json());
 };

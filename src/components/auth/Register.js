@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import { createUser, getUserByEmail } from "../../services/userService";
+import blackLogoImage from "../../assets/logo/logo-black-transparent.png";
 
 export const Register = (props) => {
   const [customer, setCustomer] = useState({
@@ -50,7 +51,7 @@ export const Register = (props) => {
     <main style={{ textAlign: "center" }}>
       <form className="form-login" onSubmit={handleRegister}>
         <img
-          src="/images/logo-black-transparent.png"
+          src={blackLogoImage}
           alt="logo black"
           style={{
             height: "190px",

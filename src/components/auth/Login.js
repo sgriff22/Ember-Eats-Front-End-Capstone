@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import { getUserByEmail } from "../../services/userService";
+import blackLogoImage from "../../assets/logo/logo-black-transparent.png";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -34,7 +35,7 @@ export const Login = () => {
       <section>
         <form className="form-login" onSubmit={handleLogin}>
           <img
-            src="/images/logo-black-transparent.png"
+            src={blackLogoImage}
             alt="logo black"
             style={{
               height: "190px",
