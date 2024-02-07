@@ -27,6 +27,19 @@ export const Profile = ({ currentUser }) => {
 
   return (
     <div>
+      <div
+        style={{
+          width: "20%",
+        }}
+      >
+        <img
+          src={user.image}
+          alt="Bob Thomas smiling to side and posing forward"
+          style={{
+            width: "100%",
+          }}
+        />
+      </div>
       <h2>
         {user.name} &nbsp;
         <span>

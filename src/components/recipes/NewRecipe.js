@@ -59,7 +59,6 @@ export const NewRecipe = ({ currentUser }) => {
 
   return (
     <div>
-      <h2>New Recipe</h2>
       <RecipeForm
         handleInputChange={handleInputChange}
         handleSubmit={handleSubmit}

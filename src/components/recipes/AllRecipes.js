@@ -87,7 +87,7 @@ export const AllRecipes = () => {
         <Row>
           {filteredRecipes.map((recipe) => {
             return (
-              <Col sm={4} key={recipe.id}>
+              <Col sm={3} key={recipe.id}>
                 <RecipeCard recipe={recipe} />
               </Col>
             );

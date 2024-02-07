@@ -1,10 +1,12 @@
 export const getAllRecipes = () => {
-  return fetch("http://localhost:8088/recipes?_embed=ratings").then((res) => res.json());
+  return fetch("http://localhost:8088/recipes?_embed=ratings").then((res) =>
+    res.json()
+  );
 };
 
 export const getRecipeById = (recipeId) => {
   return fetch(
-    `http://localhost:8088/recipes?id=${recipeId}&_expand=category&_expand=meal&_expand=user`
+    `http://localhost:8088/recipes?id=${recipeId}&_expand=category&_expand=meal&_expand=user&_embed=comments`
   ).then((res) => res.json());
 };
 
@@ -29,7 +31,7 @@ export const addNewRecipe = (recipeObj) => {
 };
 
 export const getRecipesByUserId = (userId) => {
-  return fetch(`http://localhost:8088/recipes?userId=${userId}&_embed=ratings`).then((res) =>
-    res.json()
-  );
+  return fetch(
+    `http://localhost:8088/recipes?userId=${userId}&_embed=ratings`
+  ).then((res) => res.json());
 };

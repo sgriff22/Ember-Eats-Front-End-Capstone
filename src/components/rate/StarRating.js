@@ -1,23 +1,49 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./StarRating.css";
-import { addNewRating } from "../../services/ratingsService";
+import {
+  addNewRating,
+  editRating,
+  getRatingsByRecipeId,
+} from "../../services/ratingsService";
 import { useParams } from "react-router-dom";
 
 export const StarRating = ({ currentUser, setChosenRating }) => {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
+  const [alreadyRated, setAlreadyRated] = useState({});
 
   const { recipeId } = useParams();
 
-  const handleSubmit = () => {
-    const ratingObj = {
-      userId: currentUser.id,
-      recipeId: parseInt(recipeId),
-      stars: rating,
-    };
-    addNewRating(ratingObj).then(() => {
-      window.location.reload();
+  useEffect(() => {
+    getRatingsByRecipeId(recipeId).then((res) => {
+      const currentUserRating = res.filter((r) => r.userId === currentUser.id);
+      setAlreadyRated(currentUserRating[0]);
     });
+  }, [currentUser, recipeId]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (alreadyRated) {
+      const alreadyRatedObj = {
+        id: alreadyRated.id,
+        userId: alreadyRated.userId,
+        recipeId: alreadyRated.recipeId,
+        stars: rating,
+      };
+      editRating(alreadyRatedObj).then(() => {
+        window.location.reload();
+      });
+    } else {
+      const ratingObj = {
+        userId: currentUser.id,
+        recipeId: parseInt(recipeId),
+        stars: rating,
+      };
+      addNewRating(ratingObj).then(() => {
+        window.location.reload();
+      });
+    }
   };
 
   return (

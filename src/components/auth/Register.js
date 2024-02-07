@@ -49,7 +49,14 @@ export const Register = (props) => {
   return (
     <main style={{ textAlign: "center" }}>
       <form className="form-login" onSubmit={handleRegister}>
-        <h1>Honey Rae Repairs</h1>
+        <img
+          src="/images/logo-black-transparent.png"
+          alt="logo black"
+          style={{
+            height: "190px",
+            marginBottom: "20px",
+          }}
+        />
         <h2>Please Register</h2>
         <fieldset>
           <div className="form-group">

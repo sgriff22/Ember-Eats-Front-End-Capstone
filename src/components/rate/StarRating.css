@@ -11,14 +11,14 @@
   padding: 1px;
 }
 .on {
-  color: gold;
+  color: orange;
 }
 .off {
   color: #ccc;
 }
 
 .star-rating button:hover:not(.rate) {
-  color: gold;
+  color: orange;
 }
 
 .rate-header {
@@ -26,6 +26,9 @@
 }
 
 .rate {
-padding: 0 5px;
+  padding: 0 5px;
+}
 
+#stars {
+  color: orange;
 }

@@ -41,8 +41,8 @@ export const ProfileForm = () => {
 
   return (
     <div>
-      <h2>Edit Profile</h2>
       <Form>
+      <h1>Edit Profile</h1>
         <FormGroup>
           <Label for="userName">Name</Label>
           <Input
