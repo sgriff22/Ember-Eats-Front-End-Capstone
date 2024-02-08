@@ -1,23 +1,30 @@
 import { useNavigate } from "react-router-dom";
 import { Nav, NavItem, NavLink, Navbar, NavbarBrand } from "reactstrap";
 import "./NavBar.css";
-import logo from '../../assets/logo/logo-white-transparent-noSlogan.png';
+import logo from "../../assets/logo/logo-white-transparent-noSlogan.png";
+import colorLogo from "../../assets/logo/color-logo.png";
+import { useState } from "react";
 
 export const NavBar = ({ currentUser }) => {
+  const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
 
   return (
     <Navbar className="navbar-container" color="dark" fixed="top" dark>
-      <NavbarBrand href="/">
+      <NavbarBrand
+        href="/"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <img
           alt="EmberEats logo"
-          src={logo}
+          src={isHovered ? colorLogo : logo}
           style={{
             height: "50px",
           }}
         />
       </NavbarBrand>
-      <Nav>
+      <Nav style={{ marginRight: "auto" }}>
         <NavItem>
           <NavLink href="/recipes">Recipes</NavLink>
         </NavItem>
@@ -30,7 +37,9 @@ export const NavBar = ({ currentUser }) => {
         <NavItem>
           <NavLink href={`/profile/${currentUser.id}`}>Profile</NavLink>
         </NavItem>
-        {localStorage.getItem("ember_user") ? (
+      </Nav>
+      {localStorage.getItem("ember_user") ? (
+        <Nav>
           <NavItem>
             <NavLink
               href=""
@@ -42,10 +51,10 @@ export const NavBar = ({ currentUser }) => {
               Logout
             </NavLink>
           </NavItem>
-        ) : (
-          ""
-        )}
-      </Nav>
+        </Nav>
+      ) : (
+        ""
+      )}
     </Navbar>
 
     // <ul>
