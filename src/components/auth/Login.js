@@ -20,6 +20,7 @@ export const Login = () => {
           JSON.stringify({
             id: user.id,
             isAdmin: user.isAdmin,
+            isBlocked: user.isBlocked
           })
         );
 

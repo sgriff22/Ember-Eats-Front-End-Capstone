@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { getUserById } from "../../services/userService";
+import { editUser, getUserById } from "../../services/userService";
 import { getRecipesByUserId } from "../../services/recipeService";
 import { Col, Container, Row } from "reactstrap";
 import { RecipeCard } from "../recipes/RecipeCard";
@@ -25,6 +25,19 @@ export const Profile = ({ currentUser }) => {
     });
   }, [userId]);
 
+  const handleBlockToggle = () => {
+    const updateUser = {
+      ...user,
+      isBlocked: !user.isBlocked,
+    };
+    editUser(updateUser).then(() => {
+      getUserById(userId).then((data) => {
+        const response = data[0];
+        setUser(response);
+      });
+    });
+  };
+
   return (
     <div>
       <div
@@ -43,7 +56,7 @@ export const Profile = ({ currentUser }) => {
       <h2>
         {user.name} &nbsp;
         <span>
-          {currentUser.id === user.id && (
+          {currentUser.id === user.id ? (
             <button
               onClick={() => {
                 navigate(`/profile/${currentUser.id}/editProfile`);
@@ -51,6 +64,12 @@ export const Profile = ({ currentUser }) => {
             >
               Edit
             </button>
+          ) : (
+            currentUser.isAdmin && (
+              <button onClick={handleBlockToggle}>
+                {user.isBlocked ? "Unblock" : "Block"}
+              </button>
+            )
           )}
         </span>
       </h2>

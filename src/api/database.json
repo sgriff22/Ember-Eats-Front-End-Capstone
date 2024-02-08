@@ -138,7 +138,8 @@
       "email": "john@example.com",
       "bio": "Food enthusiast with a passion for trying new recipes and creating delicious meals at home.",
       "isAdmin": false,
-      "image": "/images/profile/john-doe.jpg"
+      "image": "/images/profile/john-doe.jpg",
+      "isBlocked": false
     },
     {
       "id": 2,
@@ -146,7 +147,8 @@
       "email": "jane@example.com",
       "bio": "Professional chef with a love for teaching others the art of cooking. Admin of the cooking community.",
       "isAdmin": true,
-      "image": "/images/profile/jane-smith.jpg"
+      "image": "/images/profile/jane-smith.jpg",
+      "isBlocked": false
     },
     {
       "id": 3,
@@ -154,7 +156,8 @@
       "email": "alice@example.com",
       "bio": "Home cook exploring the world of flavors and experimenting with new ingredients.",
       "isAdmin": false,
-      "image": "/images/profile/alice-johnson.jpg"
+      "image": "/images/profile/alice-johnson.jpg",
+      "isBlocked": false
     },
     {
       "id": 4,
@@ -162,7 +165,8 @@
       "email": "bob@example.com",
       "bio": "Passionate about healthy and delicious meals. Sharing recipes for a balanced lifestyle.",
       "isAdmin": false,
-      "image": "/images/profile/bob-thompson.jpg"
+      "image": "/images/profile/bob-thompson.jpg",
+      "isBlocked": true
     }
   ],
   "saves": [
