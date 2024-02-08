@@ -5,7 +5,7 @@ import logo from "../../assets/logo/logo-white-transparent-noSlogan.png";
 import colorLogo from "../../assets/logo/color-logo.png";
 import { useState } from "react";
 
-export const NavBar = ({ currentUser }) => {
+export const AdminNav = ({ currentUser }) => {
   const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
 
@@ -27,6 +27,9 @@ export const NavBar = ({ currentUser }) => {
       <Nav style={{ marginRight: "auto" }}>
         <NavItem>
           <NavLink href="/recipes">Recipes</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="/users">Users</NavLink>
         </NavItem>
         <NavItem>
           <NavLink href="/myRecipes">My Recipes</NavLink>
