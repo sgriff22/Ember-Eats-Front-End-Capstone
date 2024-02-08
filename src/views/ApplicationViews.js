@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AdminViews } from "./AdminViews";
 import { UserViews } from "./UserViews";
-
+import { BlockedUserView } from "./BlockedUserView";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -13,9 +13,16 @@ export const ApplicationViews = () => {
     setCurrentUser(emberUserObject);
   }, []);
 
-  return currentUser.isAdmin ? (
-    <AdminViews currentUser={currentUser} />
-  ) : (
-    <UserViews currentUser={currentUser} />
-  );
+  console.log("currentUser.isBlocked:", currentUser.isBlocked);
+
+  if (currentUser.isBlocked && !currentUser.isAdmin) {
+    // Render a different view for blocked users
+    return <BlockedUserView currentUser={currentUser} />;
+  } else if (currentUser.isAdmin) {
+    // Render admin views
+    return <AdminViews currentUser={currentUser} />;
+  } else {
+    // Render user views
+    return <UserViews currentUser={currentUser} />;
+  }
 };

@@ -7,11 +7,16 @@ import {
   CardText,
   CardTitle,
 } from "reactstrap";
-import { deleteUser, getAllUsers } from "../../services/userService";
+import { editUser, getAllUsers } from "../../services/userService";
 
 export const User = ({ user, setUsers }) => {
-  const handleDelete = () => {
-    deleteUser(user.id).then(() => {
+  
+  const handleBlockToggle = () => {
+    const updateUser = {
+      ...user,
+      isBlocked: !user.isBlocked,
+    };
+    editUser(updateUser).then(() => {
       getAllUsers().then((res) => {
         setUsers(res);
       });
@@ -49,8 +54,8 @@ export const User = ({ user, setUsers }) => {
           <CardText>Email: {user.email}</CardText>
         </CardBody>
       </Link>
-      <Button color="light" onClick={handleDelete}>
-        Delete User
+      <Button color="light" onClick={handleBlockToggle}>
+        {user.isBlocked ? "Unblock User" : "Block User"}
       </Button>
     </Card>
   );

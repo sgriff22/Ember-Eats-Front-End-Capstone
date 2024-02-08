@@ -2,6 +2,10 @@
   padding: 30px;
 }
 
+.recipe-details a {
+  color: black;
+}
+
 /* My Recipes */
 #remove {
   font-family: "Amaranth", sans-serif;
