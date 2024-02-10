@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 export const EditRecipe = () => {
   const [recipe, setRecipe] = useState({});
+  const [imageUrl, setImageUrl] = useState("");
   const { recipeId } = useParams();
   const navigate = useNavigate();
 
@@ -39,6 +40,7 @@ export const EditRecipe = () => {
       categoryId: recipe.categoryId,
       mealId: recipe.mealId,
       date: recipe.date,
+      image: imageUrl,
     };
 
     editRecipe(recipeObj).then(() => {
@@ -48,11 +50,12 @@ export const EditRecipe = () => {
 
   return (
     <div>
-      <h2>Edit Recipe</h2>
       <RecipeForm
         handleEditSave={handleEditSave}
         recipe={recipe}
         handleInputChange={handleInputChange}
+        imageUrl={imageUrl}
+        setImageUrl={setImageUrl}
       />
     </div>
   );
