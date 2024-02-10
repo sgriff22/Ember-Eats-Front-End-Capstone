@@ -13,8 +13,6 @@ export const ApplicationViews = () => {
     setCurrentUser(emberUserObject);
   }, []);
 
-  console.log("currentUser.isBlocked:", currentUser.isBlocked);
-
   if (currentUser.isBlocked && !currentUser.isAdmin) {
     // Render a different view for blocked users
     return <BlockedUserView currentUser={currentUser} />;

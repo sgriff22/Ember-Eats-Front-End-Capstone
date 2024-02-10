@@ -9,7 +9,8 @@
       "steps": "Combine all ingredients in a Dutch oven, cook over campfire coals for 1-2 hours.",
       "categoryId": 10,
       "mealId": 3,
-      "date": "2024-01-28T18:30:00Z"
+      "date": "2024-01-28T18:30:00Z",
+      "image": "/images/recipe/anton-darius-pqoNaY73NAY-unsplash.jpg"
     },
     {
       "id": 2,
@@ -20,7 +21,8 @@
       "steps": "Roll out pizza dough, add sauce, top with cheese, add toppings of your choice, Cook in a preheated Dutch oven over campfire until the crust is golden.",
       "categoryId": 8,
       "mealId": 3,
-      "date": "2024-01-29T12:45:00Z"
+      "date": "2024-01-29T12:45:00Z",
+      "image": "/images/recipe/anton-darius-pqoNaY73NAY-unsplash.jpg"
     },
     {
       "id": 3,
@@ -31,7 +33,8 @@
       "steps": "Mix peaches sugar and cinnamon in a Dutch oven, layer peaches and cover with a mixture of flour sugar and butter, Cook in the campfire coals until bubbly and golden brown.",
       "categoryId": 3,
       "mealId": 4,
-      "date": "2024-01-30T09:15:00Z"
+      "date": "2024-01-30T09:15:00Z",
+      "image": "/images/recipe/anton-darius-pqoNaY73NAY-unsplash.jpg"
     },
     {
       "id": 4,
@@ -42,7 +45,8 @@
       "steps": "Marinate chicken in olive oil salt and pepper, Skewer chicken with bell peppers and onions, Grill over the campfire until chicken is cooked through",
       "categoryId": 6,
       "mealId": 3,
-      "date": "2024-01-31T15:20:00Z"
+      "date": "2024-01-31T15:20:00Z",
+      "image": "/images/recipe/anton-darius-pqoNaY73NAY-unsplash.jpg"
     },
     {
       "id": 5,
@@ -53,7 +57,8 @@
       "steps": "Slice potatoes and layer in a Dutch oven, Top with shredded cheese and bacon, Cook over campfire coals until potatoes are tender and bacon is crispy, Garnish with chopped green onions",
       "categoryId": 11,
       "mealId": 3,
-      "date": "2024-02-01T20:00:00Z"
+      "date": "2024-02-01T20:00:00Z",
+      "image": "/images/recipe/anton-darius-pqoNaY73NAY-unsplash.jpg"
     },
     {
       "id": 6,
@@ -64,7 +69,8 @@
       "steps": "Scramble eggs in Dutch oven, Set eggs aside, Cook the sausage in the dutch oven, Once sausage is cooked add eggs back in, Assemble burritos with egg and sausage mixture, Top with cheese and salsa, Warm in the Dutch oven over campfire coals",
       "categoryId": 1,
       "mealId": 1,
-      "date": "2024-02-02T07:30:00Z"
+      "date": "2024-02-02T07:30:00Z",
+      "image": "/images/recipe/anton-darius-pqoNaY73NAY-unsplash.jpg"
     }
   ],
   "categories": [
@@ -138,8 +144,8 @@
       "email": "john@example.com",
       "bio": "Food enthusiast with a passion for trying new recipes and creating delicious meals at home.",
       "isAdmin": false,
-      "image": "/images/profile/john-doe.jpg",
-      "isBlocked": false
+      "isBlocked": false,
+      "image": "/images/profile/john-doe.jpg"
     },
     {
       "id": 2,
@@ -147,8 +153,8 @@
       "email": "jane@example.com",
       "bio": "Professional chef with a love for teaching others the art of cooking. Admin of the cooking community.",
       "isAdmin": true,
-      "image": "/images/profile/jane-smith.jpg",
-      "isBlocked": false
+      "isBlocked": false,
+      "image": "/images/profile/jane-smith.jpg"
     },
     {
       "id": 3,
@@ -156,8 +162,8 @@
       "email": "alice@example.com",
       "bio": "Home cook exploring the world of flavors and experimenting with new ingredients.",
       "isAdmin": false,
-      "image": "/images/profile/alice-johnson.jpg",
-      "isBlocked": false
+      "isBlocked": false,
+      "image": "/images/profile/alice-johnson.jpg"
     },
     {
       "id": 4,
@@ -165,8 +171,8 @@
       "email": "bob@example.com",
       "bio": "Passionate about healthy and delicious meals. Sharing recipes for a balanced lifestyle.",
       "isAdmin": false,
-      "image": "/images/profile/bob-thompson.jpg",
-      "isBlocked": true
+      "isBlocked": true,
+      "image": "/images/profile/bob-thompson.jpg"
     }
   ],
   "saves": [
@@ -229,6 +235,11 @@
       "userId": 3,
       "recipeId": 1,
       "id": 15
+    },
+    {
+      "userId": 2,
+      "recipeId": 1,
+      "id": 16
     }
   ],
   "ratings": [

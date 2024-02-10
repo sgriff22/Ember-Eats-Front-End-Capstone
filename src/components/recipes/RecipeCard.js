@@ -26,7 +26,7 @@ export const RecipeCard = ({ recipe }) => {
           height: "25rem",
         }}
       >
-        <img alt="Sample" src="https://picsum.photos/300/200" />
+        <img alt={'image of ' + recipe.name} src={recipe.image} />
         <Stars averageValue={averageValue} />
         <CardBody id="card-body">
           <CardTitle tag="h5">{recipe.title}</CardTitle>

@@ -117,7 +117,7 @@ export const RecipeDetails = ({ currentUser }) => {
           &nbsp; <Stars averageValue={averageValue} />
         </p>
         <p>{recipe.description}</p>
-        {/* Add Recipe image */}
+        <img src={recipe.image} alt={recipe.name} />
         <div>
           <h4>Ingredients</h4>
           <ul>

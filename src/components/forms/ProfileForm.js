@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { Button, Form, FormGroup, FormText, Input, Label } from "reactstrap";
+import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 import { editUser, getUserById } from "../../services/userService";
 import { useNavigate, useParams } from "react-router-dom";
+import { UploadWidget } from "../UploadWidget";
 
 export const ProfileForm = () => {
   const [user, setUser] = useState({
@@ -9,6 +10,7 @@ export const ProfileForm = () => {
     bio: "",
     email: "",
   });
+  const [imageUrl, setImageUrl] = useState("");
   const { userId } = useParams();
   const navigate = useNavigate();
 
@@ -32,6 +34,7 @@ export const ProfileForm = () => {
       email: user.email,
       bio: user.bio,
       isAdmin: user.isAdmin,
+      image: imageUrl,
     };
 
     editUser(userObj).then(() => {
@@ -42,7 +45,7 @@ export const ProfileForm = () => {
   return (
     <div>
       <Form>
-      <h1>Edit Profile</h1>
+        <h1>Edit Profile</h1>
         <FormGroup>
           <Label for="userName">Name</Label>
           <Input
@@ -78,11 +81,11 @@ export const ProfileForm = () => {
             onChange={handleInputChange}
           />
         </FormGroup>
-        <FormGroup>
-          <Label for="profileImage">Image</Label>
-          <Input id="profileImage" name="image" type="file" />
-          <FormText></FormText>
-        </FormGroup>
+        <UploadWidget
+          user={user}
+          setImageUrl={setImageUrl}
+          imageUrl={imageUrl}
+        />
         <Button onClick={handleSave}>Save</Button>
       </Form>
     </div>

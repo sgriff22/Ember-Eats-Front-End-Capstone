@@ -14,6 +14,7 @@ export const NewRecipe = ({ currentUser }) => {
   });
   const [stepsString, setStepsString] = useState("");
   const [ingredientsString, setIngredientsString] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
 
   const navigate = useNavigate();
 
@@ -50,6 +51,7 @@ export const NewRecipe = ({ currentUser }) => {
       categoryId: newRecipe.categoryId,
       mealId: newRecipe.mealId,
       date: new Date(),
+      image: imageUrl,
     };
 
     addNewRecipe(recipeObj).then((res) => {
@@ -63,6 +65,8 @@ export const NewRecipe = ({ currentUser }) => {
         handleInputChange={handleInputChange}
         handleSubmit={handleSubmit}
         newRecipe={newRecipe}
+        setImageUrl={setImageUrl}
+        imageUrl={imageUrl}
       />
     </div>
   );

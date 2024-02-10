@@ -5,13 +5,13 @@ import {
   Container,
   Form,
   FormGroup,
-  FormText,
   Input,
   Label,
   Row,
 } from "reactstrap";
 import { getAllCategories } from "../../services/categoryService";
 import { getAllMeals } from "../../services/mealService";
+import { UploadWidget } from "../UploadWidget";
 
 export const RecipeForm = ({
   handleEditSave,
@@ -19,6 +19,8 @@ export const RecipeForm = ({
   handleInputChange,
   newRecipe,
   handleSubmit,
+  imageUrl,
+  setImageUrl,
 }) => {
   const [meals, setMeals] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -37,7 +39,11 @@ export const RecipeForm = ({
 
   return (
     <Form>
-      <h1>New Recipe</h1>
+      {recipe ? (
+        <h1>Edit Recipe</h1>
+      ) : (
+        <h1>New Recipe</h1> 
+      )}
       <FormGroup>
         <Label for="recipeTitle">Title</Label>
         <Input
@@ -156,11 +162,11 @@ export const RecipeForm = ({
           </Row>
         </Container>
       </FormGroup>
-      <FormGroup>
-        <Label for="recipeImage">Image</Label>
-        <Input id="recipeImage" name="image" type="file" />
-        <FormText></FormText>
-      </FormGroup>
+      <UploadWidget
+        imageUrl={imageUrl}
+        setImageUrl={setImageUrl}
+        recipe={recipe}
+      />
       {recipe ? (
         <Button onClick={handleEditSave}>Save</Button>
       ) : (

@@ -43,8 +43,8 @@ export const SavedRecipeCard = ({ recipe, setMyRecipes, myRecipes }) => {
     >
       <Link to={`/recipes/${recipe.recipeId}`}>
         <img
-          alt="Sample"
-          src="https://picsum.photos/300/200"
+          alt={"image of " + recipe.name}
+          src={recipe.recipe.image}
           style={{
             maxWidth: "100%",
             height: "auto",
