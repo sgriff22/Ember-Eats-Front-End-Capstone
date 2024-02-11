@@ -78,7 +78,7 @@ export const RecipeDetails = ({ currentUser }) => {
           <h2>{recipe.title} &nbsp;</h2>
         </Col>
         <Col sm="1">
-          {currentUser.id === recipe.userId ? (
+          {currentUser.id === recipe.userId || currentUser.isAdmin ? (
             <button
               className="edit"
               onClick={() => {

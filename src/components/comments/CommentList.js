@@ -98,6 +98,7 @@ export const CommentList = ({ recipe, currentUser }) => {
             replies={replies}
             currentUser={currentUser}
             setReplies={setReplies}
+            setComments={setComments}
           />
           {replies.some((reply) => reply.commentId === comment.id) && (
             <div>

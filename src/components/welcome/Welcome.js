@@ -17,7 +17,7 @@ export const Welcome = () => {
           backgroundPosition: "center",
           backgroundSize: "cover",
           height: "100%",
-          paddingTop: "5rem",
+          paddingTop: "8%",
         }}
       >
         <div

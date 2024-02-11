@@ -6,8 +6,6 @@ import { Stars } from "../rate/Stars";
 
 export const RecipeCard = ({ recipe }) => {
 
-
-
   const property = "stars";
   const decimalPlaces = 1;
   const sum = recipe.ratings?.reduce(
