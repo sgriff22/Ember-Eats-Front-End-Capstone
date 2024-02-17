@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getAllUsers } from "../../services/userService";
 import { User } from "./User";
 import { Col, Container, Input, Row } from "reactstrap";
+import "./Users.css";
 
 export const UsersList = () => {
   const [users, setUsers] = useState([]);
@@ -26,25 +27,22 @@ export const UsersList = () => {
   }, [users, search]);
 
   return (
-    <div>
+    <div className="users-container">
       <h1>Users</h1>
-      <div>
-        <Input
-          className="mb-4"
-          placeholder="Search for user"
-          style={{ width: "20%" }}
-          name="search"
-          onChange={(event) => {
-            setSearch(event.target.value);
-          }}
-        />
-      </div>
+      <Input
+        className="mb-5"
+        placeholder="Search for user"
+        name="search"
+        onChange={(event) => {
+          setSearch(event.target.value);
+        }}
+      />
       <Container>
         <Row>
           {filteredUsers.map((user) => {
             return (
               <Col key={user.id}>
-                <User user={user} setUsers={setUsers}/>
+                <User user={user} setUsers={setUsers} />
               </Col>
             );
           })}

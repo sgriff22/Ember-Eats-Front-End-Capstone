@@ -1,0 +1,51 @@
+.users-container input {
+  width: 18%;
+  margin: 2% 0 0 5%;
+  box-shadow: 2px 2px 4px #6c757d;
+}
+
+/* User card */
+#user-card {
+  width: 15rem;
+  box-shadow: 4px 4px 10px black;
+  text-align: center;
+}
+
+#user-image-container {
+  height: 150px;
+  width: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: black solid 3px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 2px 2px 8px black;
+}
+
+#user-image-container img {
+  width: 100%;
+  margin-top: -25px;
+}
+
+#user-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 10px 0px orange;
+}
+
+#user-card button:hover {
+  color: white;
+  transform: scale(1.1);
+  background-color: orange;
+}
+
+#user-card button {
+  font-family: "Amaranth", sans-serif;
+  padding: 2px 0;
+  font-size: 1.2rem;
+  width: 7.5rem;
+  margin-left: 2.8rem;
+}
+
+.card-text {
+  font-weight: bold;
+}
