@@ -7,7 +7,12 @@ import {
 } from "../../services/ratingsService";
 import { useParams } from "react-router-dom";
 
-export const StarRating = ({ currentUser, setChosenRating }) => {
+export const StarRating = ({
+  currentUser,
+  setIsEditing,
+  updateStarRating,
+  onRatingUpdate
+}) => {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
   const [alreadyRated, setAlreadyRated] = useState({});
@@ -21,9 +26,7 @@ export const StarRating = ({ currentUser, setChosenRating }) => {
     });
   }, [currentUser, recipeId]);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
+  const handleSubmit = () => {
     if (alreadyRated) {
       const alreadyRatedObj = {
         id: alreadyRated.id,
@@ -31,8 +34,10 @@ export const StarRating = ({ currentUser, setChosenRating }) => {
         recipeId: alreadyRated.recipeId,
         stars: rating,
       };
-      editRating(alreadyRatedObj).then(() => {
-        window.location.reload();
+
+      editRating(alreadyRatedObj).then((res) => {
+        updateStarRating(res.stars);
+        setIsEditing(false);
       });
     } else {
       const ratingObj = {
@@ -40,8 +45,8 @@ export const StarRating = ({ currentUser, setChosenRating }) => {
         recipeId: parseInt(recipeId),
         stars: rating,
       };
-      addNewRating(ratingObj).then(() => {
-        window.location.reload();
+      addNewRating(ratingObj).then((res) => {
+        onRatingUpdate(res.stars)
       });
     }
   };

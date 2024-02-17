@@ -13,18 +13,21 @@ export const RecipeDetails = ({ currentUser }) => {
   const [recipe, setRecipe] = useState({});
   const [saves, setSaves] = useState([]);
   const [ratings, setRatings] = useState([]);
+  const [averageValue, setAverageValue] = useState(0);
 
   const { recipeId } = useParams();
   const navigate = useNavigate();
 
   //Get the average of the star ratings
-  const property = "stars";
-  const decimalPlaces = 1;
-  const sum = ratings.reduce(
-    (accumulator, obj) => accumulator + obj[property],
-    0
-  );
-  const averageValue = (sum / ratings.length).toFixed(decimalPlaces);
+  useEffect(() => {
+    const property = "stars";
+    const decimalPlaces = 1;
+    const sum = ratings.reduce(
+      (accumulator, obj) => accumulator + obj[property],
+      0
+    );
+    setAverageValue((sum / ratings.length).toFixed(decimalPlaces));
+  }, [ratings]);
 
   //Convert Date
   const date = new Date(recipe.date);
@@ -71,13 +74,21 @@ export const RecipeDetails = ({ currentUser }) => {
     });
   };
 
+  const handleRatingUpdate = (newRating) => {
+    // Update the ratings in the RecipeDetails component state
+    setRatings((prevRatings) => [
+      ...prevRatings,
+      { userId: currentUser.id, stars: newRating },
+    ]);
+  };
+
   return (
     <Container className="recipe-details">
       <Row>
         <Col sm="8">
           <h2>{recipe.title} &nbsp;</h2>
         </Col>
-        <Col sm="1">
+        <Col sm="2">
           {currentUser.id === recipe.userId || currentUser.isAdmin ? (
             <button
               className="edit"
@@ -96,16 +107,28 @@ export const RecipeDetails = ({ currentUser }) => {
               Save
             </button>
           ) : (
-            ""
+            currentUser.id !== recipe.userId && (
+              <h5>
+                Saved to <br />
+                My Recipes
+              </h5>
+            )
           )}
         </Col>
-        <Col sm="3">
+        <Col sm="2">
           {currentUser.id !== recipe.userId &&
           !ratings.some((rating) => rating.userId === currentUser.id) ? (
-            <StarRating currentUser={currentUser} />
+            <StarRating
+              currentUser={currentUser}
+              onRatingUpdate={handleRatingUpdate}
+            />
           ) : (
             currentUser.id !== recipe.userId && (
-              <AlreadyRated ratings={ratings} currentUser={currentUser} />
+              <AlreadyRated
+                ratings={ratings}
+                currentUser={currentUser}
+                setRatings={setRatings}
+              />
             )
           )}
         </Col>

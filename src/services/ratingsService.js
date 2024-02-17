@@ -21,5 +21,5 @@ export const editRating = (rating) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(rating),
-  });
+  }).then((res) => res.json());
 };
