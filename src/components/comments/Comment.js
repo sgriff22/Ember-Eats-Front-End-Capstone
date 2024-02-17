@@ -63,10 +63,14 @@ export const Comment = ({
           comment={comment}
           setReplies={setReplies}
         />
-        <EditToggle
-          comment={comment}
-          setComments={setComments}
-        />
+        {(currentUser.isAdmin === true ||
+          currentUser.id === comment.userId) && (
+          <EditToggle
+            comment={comment}
+            setComments={setComments}
+            currentUser={currentUser}
+          />
+        )}
       </Col>
     </Row>
   );

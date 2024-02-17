@@ -65,7 +65,14 @@ export const Reply = ({
             setReplies={setReplies}
             reply={reply}
           />
-          <EditToggle setReplies={setReplies} reply={reply} />
+          {(currentUser.isAdmin === true ||
+            currentUser.id === reply.userId) && (
+            <EditToggle
+              setReplies={setReplies}
+              reply={reply}
+              currentUser={currentUser}
+            />
+          )}
         </div>
       </Col>
     </Row>
