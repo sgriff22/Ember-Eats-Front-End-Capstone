@@ -1,10 +1,46 @@
-
-
-
-.website-description {
-  background-color: gray;
-  color: white;
-  padding: 50px;
-  height: 100%;
+#welcome-container {
+  height: 100vh;
+  background-image: url("/src/assets/landscape.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
+#welcome {
+  padding-left: 8%;
+  padding-top: 5%;
+  width: 45%;
+}
+
+#welcome img {
+  width: 100%;
+}
+
+#welcome h1 {
+  width: 100%;
+  color: #ffffff;
+  font-size: 7.4vw;
+  font-family: "Amaranth", sans-serif;
+  text-shadow: 2px 2px 5px gray;
+}
+
+/* Blocked Welcome page */
+
+.blocked-welcome {
+  text-align: center;
+  font-family: "Amaranth", sans-serif;
+}
+
+.blocked-welcome img {
+  width: 15%;
+  margin-bottom: 15px;
+}
+
+.blocked-welcome h1 {
+  font-size: 3rem;
+  color: orange;
+}
+
+.blocked-welcome p {
+  font-size: 2rem;
+  font-weight: bolder;
+}
