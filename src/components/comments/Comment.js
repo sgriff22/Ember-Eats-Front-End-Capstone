@@ -1,8 +1,16 @@
 import { Button, Col, Row } from "reactstrap";
 import { ReplyToggle } from "./ReplyToggle";
 import { useState } from "react";
+import { EditToggle } from "./EditToggle";
 
-export const Comment = ({ comment, formatDate, replies, currentUser, setReplies }) => {
+export const Comment = ({
+  comment,
+  formatDate,
+  replies,
+  currentUser,
+  setReplies,
+  setComments,
+}) => {
   const [isToggled, setIsToggled] = useState(false);
 
   const handleToggle = () => {
@@ -19,14 +27,14 @@ export const Comment = ({ comment, formatDate, replies, currentUser, setReplies 
     >
       <Col sm={1}>
         <img
-          src={comment.user.image}
-          alt={comment.user.name}
+          src={comment.user?.image}
+          alt={comment.user?.name}
           style={{ width: "30px" }}
         />
       </Col>
       <Col sm={10}>
         <p style={{ fontWeight: "bold", marginBottom: "2px" }}>
-          {comment.user.name}{" "}
+          {comment.user?.name}{" "}
           <span style={{ fontWeight: "400", marginLeft: "10px" }}>
             {formatDate(comment.date)}
           </span>
@@ -42,7 +50,7 @@ export const Comment = ({ comment, formatDate, replies, currentUser, setReplies 
                 backgroundColor: "#F1F1F1",
                 color: "orange",
                 border: "none",
-                fontWeight: "bold"
+                fontWeight: "bold",
               }}
               onClick={handleToggle}
             >
@@ -50,7 +58,15 @@ export const Comment = ({ comment, formatDate, replies, currentUser, setReplies 
             </Button>
           </span>
         )}
-        <ReplyToggle currentUser={currentUser} comment={comment}  setReplies={setReplies}/>
+        <ReplyToggle
+          currentUser={currentUser}
+          comment={comment}
+          setReplies={setReplies}
+        />
+        <EditToggle
+          comment={comment}
+          setComments={setComments}
+        />
       </Col>
     </Row>
   );

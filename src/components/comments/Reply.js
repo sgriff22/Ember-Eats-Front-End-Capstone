@@ -1,6 +1,7 @@
 import { Button, Col, Row } from "reactstrap";
 import { ReplyToggle } from "./ReplyToggle";
 import { useState } from "react";
+import { EditToggle } from "./EditToggle";
 
 export const Reply = ({
   reply,
@@ -27,14 +28,14 @@ export const Reply = ({
     >
       <Col sm={2} offset={1}>
         <img
-          src={reply.user.image}
-          alt={reply.user.name}
+          src={reply.user?.image}
+          alt={reply.user?.name}
           style={{ width: "30px" }}
         />
       </Col>
       <Col sm={9}>
         <p style={{ fontWeight: "bold", marginBottom: "2px" }}>
-          {reply.user.name}{" "}
+          {reply.user?.name}{" "}
           <span style={{ fontWeight: "400", marginLeft: "10px" }}>
             {formatDate(reply.date)}
           </span>
@@ -64,6 +65,7 @@ export const Reply = ({
             setReplies={setReplies}
             reply={reply}
           />
+          <EditToggle setReplies={setReplies} reply={reply} />
         </div>
       </Col>
     </Row>

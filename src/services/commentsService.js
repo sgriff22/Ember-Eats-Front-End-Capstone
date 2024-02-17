@@ -29,3 +29,23 @@ export const addNewReply = (reply) => {
     body: JSON.stringify(reply),
   }).then((res) => res.json());
 };
+
+export const editComment = (comment) => {
+  return fetch(`http://localhost:8088/comments/${comment.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(comment),
+  }).then((res) => res.json());
+};
+
+export const editReply = (reply) => {
+  return fetch(`http://localhost:8088/replies/${reply.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(reply),
+  }).then((res) => res.json());
+};

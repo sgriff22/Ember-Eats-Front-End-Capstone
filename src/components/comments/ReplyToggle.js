@@ -62,6 +62,7 @@ export const ReplyToggle = ({ currentUser, comment, setReplies, reply }) => {
               name="reply"
               value={replyText}
               onChange={handleInputChange}
+              style={{ height: "80px" }}
             />
             <Button onClick={handleSubmit}>Submit</Button>
           </CardBody>
