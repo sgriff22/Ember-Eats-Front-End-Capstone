@@ -10,7 +10,6 @@ import {
 import { editUser, getAllUsers } from "../../services/userService";
 
 export const User = ({ user, setUsers }) => {
-  
   const handleBlockToggle = () => {
     const updateUser = {
       ...user,
@@ -24,33 +23,16 @@ export const User = ({ user, setUsers }) => {
   };
 
   return (
-    <Card
-      body
-      color="secondary"
-      style={{
-        width: "15rem",
-      }}
-    >
+    <Card id="user-card" body color="secondary">
       <Link to={`/profile/${user.id}`}>
-        <div
-          style={{
-            width: "100px",
-            height: "100px",
-            overflow: "hidden",
-            borderRadius: "50%",
-          }}
-        >
-          <img
-            alt="Sample"
-            src={user.image}
-            style={{ width: "100%", marginTop: "-15px" }}
-          />
+        <div id="user-image-container">
+          <img alt="Sample" src={user.image} />
         </div>
         <CardBody>
-          <CardSubtitle className="mb-2 text-muted" tag="h6">
+          <CardSubtitle className="mb-2 text-muted" tag="h5">
             Id#: {user.id}
           </CardSubtitle>
-          <CardTitle tag="h5">{user.name}</CardTitle>
+          <CardTitle tag="h3">{user.name}</CardTitle>
           <CardText>Email: {user.email}</CardText>
         </CardBody>
       </Link>
