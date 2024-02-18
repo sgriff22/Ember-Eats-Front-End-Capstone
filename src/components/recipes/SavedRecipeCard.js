@@ -43,11 +43,13 @@ export const SavedRecipeCard = ({ recipe, setMyRecipes, myRecipes }) => {
   return (
     <Card id="recipe-card" color="secondary" inverse>
       <Link to={`/recipes/${recipe.recipeId}`}>
-        <img
-          id="saved-recipe"
-          alt={"image of " + recipe.name}
-          src={recipe.recipe.image}
-        />
+        <div id="recipe-img-container">
+          <img
+            id="saved-recipe"
+            alt={"image of " + recipe.name}
+            src={recipe.recipe.image}
+          />
+        </div>
         <Row id="card-stars">
           <Col>
             <Stars averageValue={averageValue} />

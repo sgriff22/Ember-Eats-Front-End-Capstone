@@ -104,7 +104,7 @@ export const MyRecipes = ({ currentUser }) => {
               ? `saved-${recipe.recipeId}`
               : `created-${recipe.id}`;
             return (
-              <Col className="mb-4" key={key}>
+              <Col className="mb-4" sm={3} key={key}>
                 {recipe.recipeId ? (
                   <SavedRecipeCard
                     recipe={recipe}

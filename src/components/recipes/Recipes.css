@@ -65,6 +65,18 @@
   margin-right: auto;
 }
 
+#recipe-img-container {
+  height: 10rem;
+  overflow: hidden;
+}
+
+#recipe-img-container img {
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: cover;
+}
+
 #saved-recipe {
   max-width: 100%;
   height: auto;
@@ -107,12 +119,21 @@
   font-size: 1.1rem;
 }
 
-.recipe-img {
-  width: 45%;
+#recipe-details-img-box {
+  width: 30rem;
+  max-height: 30rem;
+  overflow: hidden;
+  border-radius: 15px;
   border: black solid 3px;
   margin-bottom: 20px;
+}
+
+.recipe-img {
+  width: 100%;
+  height: 100%;
   box-shadow: 2px 2px 8px #6c757d;
-  border-radius: 15px;
+  object-fit: fill;
+  object-position: center;
 }
 
 #recipe-card:hover {
