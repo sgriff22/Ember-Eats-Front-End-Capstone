@@ -41,14 +41,18 @@ export const AlreadyRated = ({ currentUser, ratings, setRatings }) => {
           updateStarRating={updateStarRating}
         />
       ) : (
-        <div>
+        <div className="star-rating-edit">
           <div>Your Rating</div>
           {Array.from({ length: starRating }, (_, index) => (
-            <span key={index} className="star">
+            <span key={index} className="star-edit">
               &#9733;
             </span>
           ))}
-          <button onClick={handleEditClick}>Edit</button>
+          <div>
+            <button className="rate" onClick={handleEditClick}>
+              Edit
+            </button>
+          </div>
         </div>
       )}
     </div>

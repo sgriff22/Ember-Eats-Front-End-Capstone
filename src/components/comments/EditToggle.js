@@ -58,7 +58,7 @@ export const EditToggle = ({ comment, setReplies, reply, setComments }) => {
         color="primary"
         onClick={toggle}
         style={{
-          marginBottom: "1rem",
+          paddingBottom: "0",
           backgroundColor: "#F1F1F1",
           color: "orange",
           border: "none",
@@ -68,16 +68,19 @@ export const EditToggle = ({ comment, setReplies, reply, setComments }) => {
         Edit
       </Button>
       <Collapse isOpen={isOpen}>
-        <Card>
+        <Card id="edit-card">
           <CardBody>
             <Input
+              id="edit-input"
               type="textarea"
               name="reply"
               value={editedText}
               onChange={handleInputChange}
               style={{ height: "80px" }}
             />
-            <Button onClick={handleSubmit}>Submit</Button>
+            <Button id="comment-btn" onClick={handleSubmit}>
+              Submit
+            </Button>
           </CardBody>
         </Card>
       </Collapse>

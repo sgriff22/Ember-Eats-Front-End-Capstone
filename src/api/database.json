@@ -302,6 +302,12 @@
       "recipeId": 6,
       "stars": 5,
       "id": 8
+    },
+    {
+      "id": 10,
+      "userId": 2,
+      "recipeId": 5,
+      "stars": 3
     }
   ],
   "comments": [

@@ -97,14 +97,14 @@ export const MyRecipes = ({ currentUser }) => {
         categories={categories}
         meals={meals}
       />
-      <Container fluid="md" id="stars">
+      <Container>
         <Row>
           {filteredRecipes.map((recipe) => {
             const key = recipe.recipeId
               ? `saved-${recipe.recipeId}`
               : `created-${recipe.id}`;
             return (
-              <Col sm={3} key={key}>
+              <Col className="mb-4" key={key}>
                 {recipe.recipeId ? (
                   <SavedRecipeCard
                     recipe={recipe}

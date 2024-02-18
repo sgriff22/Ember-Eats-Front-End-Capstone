@@ -17,28 +17,13 @@ export const Reply = ({
   };
 
   return (
-    <Row
-      key={reply.id}
-      style={{
-        border: "black solid 2px",
-        marginBottom: "10px",
-        marginLeft: "2%",
-        width: "70%",
-      }}
-    >
-      <Col sm={2} offset={1}>
-        <img
-          src={reply.user?.image}
-          alt={reply.user?.name}
-          style={{ width: "30px" }}
-        />
+    <Row key={reply.id} id="reply-row">
+      <Col sm={2} id="reply-img-col">
+        <img src={reply.user?.image} alt={reply.user?.name} />
       </Col>
-      <Col sm={9}>
-        <p style={{ fontWeight: "bold", marginBottom: "2px" }}>
-          {reply.user?.name}{" "}
-          <span style={{ fontWeight: "400", marginLeft: "10px" }}>
-            {formatDate(reply.date)}
-          </span>
+      <Col sm={10}>
+        <p id="reply-name">
+          {reply.user?.name} <span>{formatDate(reply.date)}</span>
         </p>
         <div>{reply.text}</div>
         <div>
@@ -48,7 +33,7 @@ export const Reply = ({
                 color="primary"
                 id={`nested-toggler-${reply.id}`}
                 style={{
-                  marginBottom: "1rem",
+                  paddingBottom: "0",
                   backgroundColor: "#F1F1F1",
                   color: "orange",
                   border: "none",

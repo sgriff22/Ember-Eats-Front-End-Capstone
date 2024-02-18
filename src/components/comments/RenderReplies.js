@@ -22,7 +22,7 @@ export const RenderReplies = ({
           {nestedReplies.some((nr) => nr.replyId === reply.id) && (
             <div>
               <UncontrolledCollapse toggler={`#nested-toggler-${reply.id}`}>
-                <Card style={{ border: "none", backgroundColor: "#F1F1F1", marginLeft: "20px"}}>
+                <Card id="render-card">
                   <CardBody>
                     <RenderReplies
                       replies={nestedReplies.filter(

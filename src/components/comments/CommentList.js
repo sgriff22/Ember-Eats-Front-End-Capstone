@@ -16,6 +16,7 @@ import {
 } from "reactstrap";
 import { Comment } from "./Comment";
 import { RenderReplies } from "./RenderReplies";
+import "./Comments.css";
 
 export const CommentList = ({ recipe, currentUser }) => {
   const [comments, setComments] = useState([]);
@@ -75,20 +76,20 @@ export const CommentList = ({ recipe, currentUser }) => {
   };
 
   return (
-    <Container style={{ border: "gray solid 1px" }}>
+    <Container className="commentList-container">
       <h3>Comments</h3>
-      <Form style={{ marginLeft: "0", width: "30%", padding: "10px" }}>
-      <FormGroup>
+      <Form>
+        <FormGroup>
           <Input
+            id="comment-textarea"
             name="comment"
             placeholder="Leave a comment"
             type="textarea"
-            style={{ height: "100px" }}
             value={newCommentText}
             onChange={handleInputChange}
           />
         </FormGroup>
-        <Button onClick={handleSubmit}>Submit</Button>
+        <Button id="comment-btn" onClick={handleSubmit}>Submit</Button>
       </Form>
       {comments.map((comment) => (
         <div key={comment.id}>

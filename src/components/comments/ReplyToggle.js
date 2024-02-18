@@ -45,7 +45,7 @@ export const ReplyToggle = ({ currentUser, comment, setReplies, reply }) => {
         color="primary"
         onClick={toggle}
         style={{
-          marginBottom: "1rem",
+          paddingBottom: "0",
           backgroundColor: "#F1F1F1",
           color: "orange",
           border: "none",
@@ -55,16 +55,19 @@ export const ReplyToggle = ({ currentUser, comment, setReplies, reply }) => {
         Reply
       </Button>
       <Collapse isOpen={isOpen}>
-        <Card>
+        <Card id="reply-card">
           <CardBody>
             <Input
+              id="reply-input"
               type="textarea"
               name="reply"
               value={replyText}
               onChange={handleInputChange}
               style={{ height: "80px" }}
             />
-            <Button onClick={handleSubmit}>Submit</Button>
+            <Button id="comment-btn" onClick={handleSubmit}>
+              Submit
+            </Button>
           </CardBody>
         </Card>
       </Collapse>
