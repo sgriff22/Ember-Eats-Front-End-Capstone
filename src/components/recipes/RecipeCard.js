@@ -16,7 +16,9 @@ export const RecipeCard = ({ recipe }) => {
   return (
     <Link to={`/recipes/${recipe.id}`}>
       <Card id="recipe-card" color="secondary" inverse>
-        <img alt={"image of " + recipe.name} src={recipe.image} />
+        <div id="recipe-img-container">
+          <img alt={"image of " + recipe.name} src={recipe.image} />
+        </div>
         <Row id="card-stars">
           <Col>
             <Stars averageValue={averageValue} />

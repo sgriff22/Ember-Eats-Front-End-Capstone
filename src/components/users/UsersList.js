@@ -41,7 +41,7 @@ export const UsersList = () => {
         <Row>
           {filteredUsers.map((user) => {
             return (
-              <Col key={user.id}>
+              <Col sm={3} key={user.id}>
                 <User user={user} setUsers={setUsers} />
               </Col>
             );
