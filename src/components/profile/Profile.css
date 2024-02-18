@@ -1,0 +1,44 @@
+.profile-container {
+  margin-left: 5%;
+  padding-top: 3%;
+}
+
+.image-container {
+  height: 300px;
+  width: 18%;
+  overflow: hidden;
+  border: black solid 3px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 8px #6c757d;
+  border-radius: 15px;
+}
+
+.image-container img {
+  width: 100%;
+}
+
+.edit-button {
+  float: right;
+  margin-right: 8%;
+}
+
+.block-button {
+  float: right;
+  margin-right: 2%;
+}
+
+.profile-container h2 {
+  font-size: 3rem;
+  font-family: "Amaranth", sans-serif;
+}
+
+.email,
+.bio {
+  font-size: 1.4rem;
+}
+
+.profile-container h4 {
+  font-size: 1.8rem;
+  text-decoration: underline;
+  font-weight: bold;
+}

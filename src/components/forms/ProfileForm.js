@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Button, Form, FormGroup, Input, Label } from "reactstrap";
+import { Button, Col, Form, FormGroup, Input, Label, Row } from "reactstrap";
 import { editUser, getUserById } from "../../services/userService";
 import { useNavigate, useParams } from "react-router-dom";
-import { UploadWidget } from "../UploadWidget";
+import { UploadWidget } from "./UploadWidget";
+import "./Form.css";
 
 export const ProfileForm = () => {
   const [user, setUser] = useState({
@@ -43,20 +44,36 @@ export const ProfileForm = () => {
   };
 
   return (
-    <div>
+    <div className="form-container">
       <Form>
         <h1>Edit Profile</h1>
         <FormGroup>
-          <Label for="userName">Name</Label>
-          <Input
-            id="userName"
-            name="name"
-            type="text"
-            value={user?.name}
-            required
-            autoComplete="name"
-            onChange={handleInputChange}
-          />
+          <Row>
+            <Col>
+              <Label for="userName">Name</Label>
+              <Input
+                id="userName"
+                name="name"
+                type="text"
+                value={user?.name}
+                required
+                autoComplete="name"
+                onChange={handleInputChange}
+              />
+            </Col>
+            <Col>
+              <Label for="userEmail">Email</Label>
+              <Input
+                id="userEmail"
+                name="email"
+                type="text"
+                value={user?.email}
+                required
+                autoComplete="email"
+                onChange={handleInputChange}
+              />
+            </Col>
+          </Row>
         </FormGroup>
         <FormGroup>
           <Label for="bio">About Me</Label>
@@ -69,24 +86,14 @@ export const ProfileForm = () => {
             onChange={handleInputChange}
           />
         </FormGroup>
-        <FormGroup>
-          <Label for="userEmail">Email</Label>
-          <Input
-            id="userEmail"
-            name="email"
-            type="text"
-            value={user?.email}
-            required
-            autoComplete="email"
-            onChange={handleInputChange}
-          />
-        </FormGroup>
         <UploadWidget
           user={user}
           setImageUrl={setImageUrl}
           imageUrl={imageUrl}
         />
-        <Button onClick={handleSave}>Save</Button>
+        <Button id="save-profile" onClick={handleSave}>
+          Save Changes
+        </Button>
       </Form>
     </div>
   );

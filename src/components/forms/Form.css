@@ -1,0 +1,64 @@
+/* both forms */
+.form-container {
+  width: 80%;
+  padding-top: 1%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form {
+  box-shadow: 2px 2px 8px #6c757d;
+  padding: 60px 80px;
+}
+form label {
+  font-size: 1.5rem;
+}
+
+form h1 {
+  padding-top: 0;
+  padding-bottom: 10px;
+}
+
+.form-container input {
+  font-size: 1.2rem;
+}
+.form-container button {
+  font-size: 1.3rem;
+  font-family: "Amaranth", sans-serif;
+}
+
+#save-profile,
+#save-changes-recipe {
+  margin-left: 80%;
+}
+
+.form-container button:hover {
+  color: white;
+  transform: scale(1.1);
+  background-color: orange;
+  border: white solid 1px;
+}
+
+/* Edit Recipe Form */
+#submit-recipe {
+  margin-left: 86%;
+}
+
+#categorySelect,
+#mealSelect {
+  font-size: 1.2rem;
+}
+
+/* upload widget */
+.upload-container img {
+  max-width: 30%;
+}
+
+.upload-container p {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.upload-container img {
+  margin-bottom: 10px;
+}
