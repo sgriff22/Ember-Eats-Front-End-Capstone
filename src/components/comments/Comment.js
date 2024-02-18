@@ -18,26 +18,13 @@ export const Comment = ({
   };
 
   return (
-    <Row
-      style={{
-        border: "black solid 2px",
-        marginBottom: "10px",
-        width: "70%",
-      }}
-    >
-      <Col sm={1}>
-        <img
-          src={comment.user?.image}
-          alt={comment.user?.name}
-          style={{ width: "30px" }}
-        />
+    <Row id="comment-row">
+      <Col sm={2} id="comment-img-col">
+        <img src={comment.user?.image} alt={comment.user?.name} />
       </Col>
       <Col sm={10}>
-        <p style={{ fontWeight: "bold", marginBottom: "2px" }}>
-          {comment.user?.name}{" "}
-          <span style={{ fontWeight: "400", marginLeft: "10px" }}>
-            {formatDate(comment.date)}
-          </span>
+        <p id="comment-name">
+          {comment.user?.name} <span>{formatDate(comment.date)}</span>
         </p>
         <div>{comment.text}</div>
         {replies.some((reply) => reply.commentId === comment.id) && (
@@ -46,7 +33,7 @@ export const Comment = ({
               color="primary"
               id={`toggler-${comment.id}`}
               style={{
-                marginBottom: "1rem",
+                paddingBottom: "0",
                 backgroundColor: "#F1F1F1",
                 color: "orange",
                 border: "none",

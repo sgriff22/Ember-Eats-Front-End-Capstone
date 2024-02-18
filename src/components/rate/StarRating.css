@@ -1,7 +1,12 @@
-.star-rating {
+.star-rating,
+.star-rating-edit {
   font-size: 20px;
   width: 120px;
   text-align: center;
+  border: #6c757d solid 1px;
+  border-radius: 5px;
+  padding: 5px 0;
+  box-shadow: 2px 2px 8px #6c757d;
 }
 
 .star-rating button:not(.rate) {
@@ -30,5 +35,9 @@
 }
 
 #stars {
+  color: orange;
+}
+
+.star-edit {
   color: orange;
 }

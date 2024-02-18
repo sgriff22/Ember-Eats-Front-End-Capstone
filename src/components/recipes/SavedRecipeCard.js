@@ -1,4 +1,12 @@
-import { Button, Card, CardBody, CardText, CardTitle } from "reactstrap";
+import {
+  Button,
+  Card,
+  CardBody,
+  CardText,
+  CardTitle,
+  Col,
+  Row,
+} from "reactstrap";
 import { deleteSave } from "../../services/savesService";
 import { Link } from "react-router-dom";
 import "./Recipes.css";
@@ -33,33 +41,28 @@ export const SavedRecipeCard = ({ recipe, setMyRecipes, myRecipes }) => {
   };
 
   return (
-    <Card
-      color="secondary"
-      inverse
-      style={{
-        width: "15rem",
-        height: "25rem",
-      }}
-    >
+    <Card id="recipe-card" color="secondary" inverse>
       <Link to={`/recipes/${recipe.recipeId}`}>
         <img
+          id="saved-recipe"
           alt={"image of " + recipe.name}
           src={recipe.recipe.image}
-          style={{
-            maxWidth: "100%",
-            height: "auto",
-            objectFit: "cover",
-          }}
         />
-        <Stars averageValue={averageValue} />
-        <CardBody style={{ color: "white" }}>
+        <Row id="card-stars">
+          <Col>
+            <Stars averageValue={averageValue} />
+          </Col>
+        </Row>
+        <CardBody id="card-body-recipe">
           <CardTitle tag="h5">{recipe.recipe.title}</CardTitle>
           <CardText>{recipe.recipe.description}</CardText>
         </CardBody>
       </Link>
-      <Button color="light" onClick={handleRemoveSave} id="remove">
-        Remove
-      </Button>
+      <div className="remove-container position-absolute bottom-0 end-0">
+        <Button color="light" onClick={handleRemoveSave} id="remove">
+          Remove
+        </Button>
+      </div>
     </Card>
   );
 };

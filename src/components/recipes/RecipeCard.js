@@ -1,11 +1,10 @@
 import React from "react";
-import { Card, CardBody, CardText, CardTitle } from "reactstrap";
+import { Card, CardBody, CardText, CardTitle, Col, Row } from "reactstrap";
 import "./Recipes.css";
 import { Link } from "react-router-dom";
 import { Stars } from "../rate/Stars";
 
 export const RecipeCard = ({ recipe }) => {
-
   const property = "stars";
   const decimalPlaces = 1;
   const sum = recipe.ratings?.reduce(
@@ -16,17 +15,14 @@ export const RecipeCard = ({ recipe }) => {
 
   return (
     <Link to={`/recipes/${recipe.id}`}>
-      <Card
-        color="secondary"
-        inverse
-        style={{
-          width: "15rem",
-          height: "25rem",
-        }}
-      >
-        <img alt={'image of ' + recipe.name} src={recipe.image} />
-        <Stars averageValue={averageValue} />
-        <CardBody id="card-body">
+      <Card id="recipe-card" color="secondary" inverse>
+        <img alt={"image of " + recipe.name} src={recipe.image} />
+        <Row id="card-stars">
+          <Col>
+            <Stars averageValue={averageValue} />
+          </Col>
+        </Row>
+        <CardBody id="card-body-recipe">
           <CardTitle tag="h5">{recipe.title}</CardTitle>
           <CardText>{recipe.description}</CardText>
         </CardBody>

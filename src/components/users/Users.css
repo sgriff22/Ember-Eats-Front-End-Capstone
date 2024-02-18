@@ -1,7 +1,9 @@
 .users-container input {
-  width: 18%;
+  width: 20%;
   margin: 2% 0 0 5%;
   box-shadow: 2px 2px 4px #6c757d;
+  font-family: "Amaranth", sans-serif;
+  font-size: 1.3rem;
 }
 
 /* User card */

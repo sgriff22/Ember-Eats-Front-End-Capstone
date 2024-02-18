@@ -85,10 +85,10 @@ export const RecipeDetails = ({ currentUser }) => {
   return (
     <Container className="recipe-details">
       <Row>
-        <Col sm="8">
+        <Col sm="6">
           <h2>{recipe.title} &nbsp;</h2>
         </Col>
-        <Col sm="2">
+        <Col sm="2" className="text-end pe-0">
           {currentUser.id === recipe.userId || currentUser.isAdmin ? (
             <button
               className="edit"
@@ -96,11 +96,13 @@ export const RecipeDetails = ({ currentUser }) => {
                 navigate(`/recipes/${recipeId}/editRecipe`);
               }}
             >
-              Edit
+              Edit Recipe
             </button>
           ) : (
             ""
           )}
+        </Col>
+        <Col sm="2" className="text-center pe-0 ps-0">
           {currentUser.id !== recipe.userId &&
           !saves.some((save) => save.recipeId === recipe.id) ? (
             <button className="save" onClick={handleSave}>
@@ -115,7 +117,7 @@ export const RecipeDetails = ({ currentUser }) => {
             )
           )}
         </Col>
-        <Col sm="2">
+        <Col sm="2" className="pe-0 ps-0">
           {currentUser.id !== recipe.userId &&
           !ratings.some((rating) => rating.userId === currentUser.id) ? (
             <StarRating
@@ -134,13 +136,15 @@ export const RecipeDetails = ({ currentUser }) => {
         </Col>
       </Row>
       <div>
-        <p>
-          <Link to={`/profile/${recipe.user?.id}`}>{recipe.user?.name}</Link>{" "}
+        <p className="recipe-info">
+          <Link to={`/profile/${recipe.user?.id}`}>
+            <strong>{recipe.user?.name}</strong>
+          </Link>{" "}
           &nbsp; {formattedDate}
           &nbsp; <Stars averageValue={averageValue} />
         </p>
-        <p>{recipe.description}</p>
-        <img src={recipe.image} alt={recipe.name} />
+        <p className="recipe-description">{recipe.description}</p>
+        <img className="recipe-img" src={recipe.image} alt={recipe.name} />
         <div>
           <h4>Ingredients</h4>
           <ul>
