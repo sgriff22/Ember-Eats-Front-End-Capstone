@@ -140,3 +140,7 @@
   transform: scale(1.04);
   box-shadow: 0 0 10px 0px orange;
 }
+
+.no-rate {
+  color: orange;
+}

@@ -329,7 +329,7 @@
     {
       "id": 1,
       "name": "John Doe",
-      "email": "john@example.com",
+      "email": "jdoe@gmal.com",
       "bio": "Food enthusiast with a passion for trying new recipes and creating delicious meals at home. Always on the lookout for unique flavors and cooking techniques to elevate home cooking experiences. Enjoys sharing culinary discoveries with the community. John believes that food has the power to bring people together and create lasting memories. Whether it's experimenting with exotic spices or perfecting classic dishes, John's kitchen is a place of creativity and joy.",
       "isAdmin": false,
       "isBlocked": false,
@@ -338,7 +338,7 @@
     {
       "id": 2,
       "name": "Jane Smith",
-      "email": "jane@example.com",
+      "email": "jsmith@gmail.com",
       "bio": "Professional chef with a love for teaching others the art of cooking. Admin of the cooking community, dedicated to fostering a shared passion for culinary excellence. With years of experience in professional kitchens, Jane brings a wealth of knowledge to the community. Her cooking philosophy revolves around the perfect balance of flavors, textures, and presentation. Jane enjoys not only creating mouthwatering dishes but also guiding others on their culinary journeys, helping them discover the joy of cooking.",
       "isAdmin": true,
       "isBlocked": false,
@@ -347,7 +347,7 @@
     {
       "id": 3,
       "name": "Alice Johnson",
-      "email": "alice@example.com",
+      "email": "aliceJ@att.net",
       "bio": "Home cook exploring the world of flavors and experimenting with new ingredients. Committed to creating memorable dining experiences at home. Finds joy in discovering and perfecting family-friendly recipes for all occasions. Alice believes that the heart of a home is in its kitchen, and each meal is an opportunity to express love and creativity. From weeknight dinners to special celebrations, Alice's kitchen is a place where delicious aromas and laughter come together.",
       "isAdmin": false,
       "isBlocked": false,
@@ -1035,7 +1035,7 @@
     },
     {
       "id": 5,
-      "userId": 1,
+      "userId": 8,
       "recipeId": 3,
       "text": "Dutch Oven Peach Cobbler is a delightful dessert for camping. The peaches were so juicy, and the topping was perfect!",
       "date": "2024-02-07T09:45:00Z"
@@ -1044,7 +1044,7 @@
       "id": 6,
       "userId": 2,
       "recipeId": 3,
-      "text": "I'm glad you liked it! It's a family favorite for us. Did you try any other Dutch oven desserts?",
+      "text": "Thank you so much for sharing this. It's now a family favorite",
       "date": "2024-02-08T07:10:00Z"
     },
     {
@@ -1143,7 +1143,7 @@
       "userId": 1,
       "commentId": 5,
       "replyId": 0,
-      "text": "We also made Dutch Oven Apple Crisp. It was a sweet ending to our camping meals!",
+      "text": "Me also made Dutch Oven Apple Crisp. It was a sweet ending to our camping meals!",
       "date": "2024-02-09T14:45:00Z"
     },
     {
@@ -1233,14 +1233,6 @@
       "replyId": 10,
       "text": "Loaded baked potatoes are a classic! Any special toppings or seasonings you use to make them stand out?",
       "date": "2024-02-20T15:00:00Z"
-    },
-    {
-      "userId": 2,
-      "commentId": 3,
-      "replyId": 0,
-      "text": "",
-      "date": "2024-02-11T05:32:47.188Z",
-      "id": 18
     }
   ]
 }

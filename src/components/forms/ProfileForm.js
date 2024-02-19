@@ -35,7 +35,7 @@ export const ProfileForm = () => {
       email: user.email,
       bio: user.bio,
       isAdmin: user.isAdmin,
-      image: imageUrl,
+      image: imageUrl !== "" ? imageUrl : user.image,
     };
 
     editUser(userObj).then(() => {

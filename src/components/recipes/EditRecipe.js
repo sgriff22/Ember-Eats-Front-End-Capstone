@@ -40,7 +40,7 @@ export const EditRecipe = () => {
       categoryId: recipe.categoryId,
       mealId: recipe.mealId,
       date: recipe.date,
-      image: imageUrl,
+      image: imageUrl !== "" ? imageUrl : recipe.image,
     };
 
     editRecipe(recipeObj).then(() => {

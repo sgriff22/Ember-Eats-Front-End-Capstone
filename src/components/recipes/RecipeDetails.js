@@ -141,7 +141,12 @@ export const RecipeDetails = ({ currentUser }) => {
             <strong>{recipe.user?.name}</strong>
           </Link>{" "}
           &nbsp; {formattedDate}
-          &nbsp; <Stars averageValue={averageValue} />
+          &nbsp;{" "}
+          {ratings.length > 0 ? (
+            <Stars averageValue={averageValue} />
+          ) : (
+            <span className="no-rate">No Ratings Yet</span>
+          )}
         </p>
         <p className="recipe-description">{recipe.description}</p>
         <div id="recipe-details-img-box">

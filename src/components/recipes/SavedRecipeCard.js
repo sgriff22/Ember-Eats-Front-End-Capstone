@@ -52,7 +52,11 @@ export const SavedRecipeCard = ({ recipe, setMyRecipes, myRecipes }) => {
         </div>
         <Row id="card-stars">
           <Col>
-            <Stars averageValue={averageValue} />
+            {ratings.length > 0 ? (
+              <Stars averageValue={averageValue} />
+            ) : (
+              <span className="no-rate">No Ratings Yet</span>
+            )}
           </Col>
         </Row>
         <CardBody id="card-body-recipe">
