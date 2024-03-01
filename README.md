@@ -2,7 +2,7 @@
 
 EmberEats is an application designed for outdoor cooking enthusiasts who are passionate about campfire and Dutch oven recipes. The app aims to provide a platform for users to store, share, and discover a wide variety of outdoor cooking recipes. Users can not only add, rate, and save their favorite recipes but also explore and try out creations from other enthusiasts.
 
-###Features:
+### Features:
 1. Recipe Management
 • Add Recipes: Users can easily add their own campfire and Dutch oven recipes to share with the EmberEats community.
 • Rate Recipes: Users have the ability to rate recipes based on their experience, helping others discover the most popular and delicious outdoor cooking creations.
